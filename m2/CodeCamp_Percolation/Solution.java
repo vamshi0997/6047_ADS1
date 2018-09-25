@@ -10,23 +10,51 @@ import java.util.Scanner;
 
 
 // You can implement the above API to solve the problem
-
+/**
+ * In percolation class we define different methods.
+ * Such as Open, isopen, perculation methods. 
+ */
 class Percolation {
+	/**
+	 * grid array stores the boolean values.
+	 */
 	private boolean[][] grid;
+	/**
+	 * creating WeightQuickUnionUF object.
+	 */
 	private WeightedQuickUnionUF uf;
+	/**
+	 * varaible for number of open sites.
+	 */
 	private int numberOfOpenSites = 0;
+	/**
+	 * variable to count size.
+	 */
 	private int size;
+	/**
+	 * variable grid size is useful for virtual nodes.
+	 */
 	private int gridsize;
-
-	Percolation(int size) {
+    /**
+     * percolation constructor for initializing the size.
+     * 
+     * @param size to count size.
+     */
+	Percolation(final int size) {
         grid = new boolean[size][size];
         uf = new WeightedQuickUnionUF(size * size + 2);
         numberOfOpenSites = 0;
         this.size = size;
         gridsize = size * size; 
 	}
-
-	public void open(int row, int col) {
+    /**
+     * In open method, we use isOpen to to find
+     * whether it is open and then we use union to connect two point in grid.
+     *
+     * @param row grid row value.
+     * @param col grid column value.
+     */
+	public void open(final int row, final int col) {
         //System.out.println(row +"-"+s col);
 		if (grid[row][col]) return;
 		grid[row][col] = true;
@@ -65,34 +93,71 @@ class Percolation {
         }
         //System.out.println("hi");
 	}
-
-	public boolean isOpen(int row, int col) {
+    
+    /**
+     * Isopen return true if the grid element is open else false. 
+     *
+     * @param row row value.
+     * @param col column value.
+     * 
+     * @return boolean value true or false.
+     */
+	public boolean isOpen(final int row, final int col) {
 		return grid[row][col];
 	}
-
+    
+    /**
+     * this is used to track number of opensites.
+     * @return number of opensites.
+     */
 	public int countOfOpenSites() {
 		return numberOfOpenSites;
 	}
-
-	public int getIndexOf(int row, int col) {
+    
+    /**
+     * It will give value at that particular position in array.
+     * 
+     * @param row row value.
+     * @param col column value.
+     * 
+     * @return the value at that particular position in array.
+     */
+	public int getIndexOf(final int row, final int col) {
 		return size * (row) + col;
 	}
-
+    
+    /**
+     * percolates is used find whether we can percolate to entire grid.
+     * @return true or false.
+     */
 	public boolean percolates() {
-		//System.out.println("hi");
         return uf.connected(gridsize, gridsize + 1);
 	}
 }
 
+/**
+ * In Solution we Start the main program. 
+ *
+ * @param args [description]
+ */
 class Solution {
-	public static void main(String[] args) {
-		Scanner scan = new Scanner(System.in);
-		Percolation Perculate = new Percolation(scan.nextInt());
-		//System.out.println(Perculate.percolates());
-		while(scan.hasNext()) {
-			Perculate.open(scan.nextInt()-1, scan.nextInt()-1);
-		}
+	/**
+	 * defalut Solution constructor. 
+	 */
+	private Solution() {
 
-		System.out.println(Perculate.percolates());
+	}
+	/**
+	 * In main method we take the input of array size, and row and column values. 
+	 *
+	 * @param args command line arguments.
+	 */
+	public static void main(final String[] args) {
+		Scanner scan = new Scanner(System.in);
+		Percolation perculate = new Percolation(scan.nextInt());
+		while (scan.hasNext()) {
+			perculate.open(scan.nextInt() - 1, scan.nextInt() - 1);
+		}
+		System.out.println(perculate.percolates());
 	}
 }
