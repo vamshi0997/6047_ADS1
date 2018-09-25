@@ -17,7 +17,7 @@ import java.util.Scanner;
 // You can implement the above API to solve the problem
 /**
  * In percolation class we define different methods.
- * Such as Open, isopen, perculation methods. 
+ * Such as Open, isopen, perculation methods.
  */
 class Percolation {
     /**
@@ -43,7 +43,7 @@ class Percolation {
     /**
      * percolation constructor for initializing the size.
      *
-     * @param size to count size.
+     * @param size1 to count size.
      */
     Percolation(final int size1) {
         grid = new boolean[size1][size1];
