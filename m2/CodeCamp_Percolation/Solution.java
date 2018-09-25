@@ -1,13 +1,18 @@
 import java.util.Scanner;
 // public class Percolation {
-//     public Percolation(int n)                // create n-by-n grid, with all sites blocked
-//     public    void open(int row, int col)    // open site (row, col) if it is not open already
-//     public boolean isOpen(int row, int col)  // is site (row, col) open?
-//     public boolean isFull(int row, int col)  // is site (row, col) full?
-//     public     int numberOfOpenSites()       // number of open sites
-//     public boolean percolates()              // does the system percolate?
+//     public Percolation(int n)
+// create n-by-n grid, with all sites blocked
+//     public    void open(int row, int col) 
+// open site (row, col) if it is not open already
+//     public boolean isOpen(int row, int col)
+// is site (row, col) open?
+//     public boolean isFull(int row, int col)
+// is site (row, col) full?
+//     public     int numberOfOpenSites()
+// number of open sites
+//     public boolean percolates()
+// does the system percolate?
 // }
-
 
 // You can implement the above API to solve the problem
 /**
@@ -23,7 +28,7 @@ class Percolation {
 	 * creating WeightQuickUnionUF object.
 	 */
 	private WeightedQuickUnionUF uf;
-	/**
+	/** 
 	 * varaible for number of open sites.
 	 */
 	private int numberOfOpenSites = 0;
@@ -55,7 +60,6 @@ class Percolation {
      * @param col grid column value.
      */
 	public void open(final int row, final int col) {
-        //System.out.println(row +"-"+s col);
 		if (grid[row][col]) return;
 		grid[row][col] = true;
 		numberOfOpenSites++;
@@ -63,49 +67,44 @@ class Percolation {
 		//top
 		if (row - 1 >= 0 && isOpen(row - 1, col)) {
             uf.union(getIndexOf(row,col), getIndexOf(row - 1, col));
-            //System.out.println("1");
 		}
         
         //left
         if (col - 1 >= 0 && isOpen(row, col - 1)) {
             uf.union(getIndexOf(row,col), getIndexOf(row, col - 1));
-            //System.out.println("2");
         }
 
         //right
         if (col + 1 < size && isOpen(row, col + 1)) {
         	uf.union(getIndexOf(row,col), getIndexOf(row, col + 1));
-        	//System.out.println("3");
         }
 
         //bottom
         if (row + 1 < size && isOpen(row + 1, col)) {
         	uf.union(getIndexOf(row,col), getIndexOf(row + 1, col));
-        	//System.out.println("4");
         }
 
         if (row == 0) {
         	uf.union(getIndexOf(row, col), gridsize);
         }
 
-        if (row == size-1) {
+        if (row == size - 1) {
         	uf.union(getIndexOf(row, col), gridsize + 1);
         }
-        //System.out.println("hi");
 	}
-    
+
     /**
      * Isopen return true if the grid element is open else false. 
      *
      * @param row row value.
      * @param col column value.
-     * 
+     *
      * @return boolean value true or false.
      */
 	public boolean isOpen(final int row, final int col) {
 		return grid[row][col];
 	}
-    
+
     /**
      * this is used to track number of opensites.
      * @return number of opensites.
@@ -113,19 +112,19 @@ class Percolation {
 	public int countOfOpenSites() {
 		return numberOfOpenSites;
 	}
-    
+
     /**
      * It will give value at that particular position in array.
-     * 
+     *
      * @param row row value.
      * @param col column value.
-     * 
+     *
      * @return the value at that particular position in array.
      */
 	public int getIndexOf(final int row, final int col) {
 		return size * (row) + col;
 	}
-    
+
     /**
      * percolates is used find whether we can percolate to entire grid.
      * @return true or false.
@@ -136,19 +135,18 @@ class Percolation {
 }
 
 /**
- * In Solution we Start the main program. 
- *
- * @param args [description]
+ * In Solution we Start the main program.
  */
-class Solution {
+public final class Solution {
 	/**
-	 * defalut Solution constructor. 
+	 * defalut Solution constructor.
 	 */
 	private Solution() {
 
 	}
 	/**
-	 * In main method we take the input of array size, and row and column values. 
+	 * In main method we take the input of array size,
+	 * and row and column values.
 	 *
 	 * @param args command line arguments.
 	 */
