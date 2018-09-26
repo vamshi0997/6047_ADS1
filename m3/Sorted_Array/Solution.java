@@ -38,11 +38,11 @@ class Solution {
             secondarr[i] = Integer.parseInt(second[i]);
         }
 
-        //sort(firstarr, secondarr);
+        mergesort(firstarr, secondarr);
 
     }
 
-    public static void sort(int[] firstarr, int[] secondarr) {
+    public static void mergesort(int[] firstarr, int[] secondarr) {
         int i = 0;
         int j = 0;
         int [] result;
