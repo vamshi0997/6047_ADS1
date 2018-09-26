@@ -17,6 +17,7 @@ public final class Solution {
                     	break;
                     }
 				}
+				break;
 			}
 		}
 		System.out.println(count);
