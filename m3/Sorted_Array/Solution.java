@@ -4,12 +4,12 @@ import java.util.Arrays;
  * In solution class we have main method and other methods.
  */
 public final class Solution {
-	/**
-	 * default constructor.
-	 */
-	private Solution() {
+    /**
+     * default constructor.
+     */
+    private Solution() {
 
-	}
+    }
     /**
      * main function where we initialize the two arrays.
      *
@@ -22,6 +22,7 @@ public final class Solution {
 
         String[] first = scan.nextLine().split(",");
         String[] second = scan.nextLine().split(",");
+        
         int[] firstarr;
         int[] secondarr;
         secondarr = new int[second.length];
@@ -66,8 +67,8 @@ public final class Solution {
             }
         }
         System.out.println(
-        	Arrays.toString(result).replace(
-        		"[", "").replace("]", "").replace(" ", ""));
+            Arrays.toString(result).replace(
+                "[", "").replace("]", "").replace(" ", ""));
     }
 
 }
