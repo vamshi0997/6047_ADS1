@@ -3,20 +3,18 @@ import java.util.Arrays;
 /**
  * In solution class we have main method and other methods.
  */
-class Solution {
-    public static void main(String[] args) {
+public final class Solution {
+    /**
+     * @brief [brief description]
+     * @details [long description]
+     * 
+     * @param String [description]
+     */
+    public static void main(final String[] args) {
         Scanner scan = new Scanner(System.in);
         int size1 = Integer.parseInt(scan.nextLine());
         int size2 = Integer.parseInt(scan.nextLine());
-        // if (size1 > 0) {
-        //     String[] first = scan.nextLine().split(",");
-        //     System.out.println(Arrays.toString(first));
-        // }
-        // if (size2 > 0) {
-        //     String[] second = scan.nextLine().split(",");
-        //     //System.out.println(Arrays.toString(first));
-        //     System.out.println(Arrays.toString(second));
-        // }
+
         String[] first = scan.nextLine().split(",");
         String[] second = scan.nextLine().split(",");
         
@@ -41,24 +39,28 @@ class Solution {
         mergesort(firstarr, secondarr);
 
     }
-
-    public static void mergesort(int[] firstarr, int[] secondarr) {
+    /**
+     * sorting two arrays into a single array.
+     * @param firstarr int array
+     * @param secondarr int array
+     */
+    public static void mergesort(final int[] firstarr, final int[] secondarr) {
         int i = 0;
         int j = 0;
         int [] result;
         result = new int[firstarr.length+secondarr.length];
-        for(int k = 0; k<result.length; k++) {
-            if(i<firstarr.length && j<secondarr.length) {
-                if(firstarr[i] < secondarr[j]) {
+        for (int k = 0; k < result.length; k++) {
+            if (i < firstarr.length && j < secondarr.length) {
+                if (firstarr[i] < secondarr[j]) {
                     result[k] = firstarr[i++];
                 }
                 else
                     result[k] = secondarr[j++];
             }
-            else if(i>=firstarr.length) {
+            else if(i >= firstarr.length) {
                 result[k] = secondarr[j++];
             }
-            else if(j>=secondarr.length) {
+            else if(j >= secondarr.length) {
                 result[k] = firstarr[i++];
             }
         }
