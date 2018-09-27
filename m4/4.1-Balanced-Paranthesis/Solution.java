@@ -49,7 +49,7 @@ public final class Solution {
                 	link.push(str[i]);
                 } else if (str[i].equals("]")) {
                 	if (link.isEmpty()) {
-                		System.out.println("NO");
+                		//System.out.println("NO");
                 		flag = 1;
                 		break;
                 	}
@@ -58,7 +58,7 @@ public final class Solution {
                 	}
                 } else if (str[i].equals("}")) {
                 	if (link.isEmpty()) {
-                        System.out.println("NO");
+                        //System.out.println("NO");
                         flag = 1;
                         break;
                 	}
@@ -67,7 +67,7 @@ public final class Solution {
                 	}
                 } else if (str[i].equals(")")) {
                 	if (link.isEmpty()) {
-                		System.out.println("NO");
+                		//System.out.println("NO");
                 		flag = 1;
                 		break;
                 	}
