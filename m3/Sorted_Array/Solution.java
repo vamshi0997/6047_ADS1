@@ -19,10 +19,8 @@ public final class Solution {
         Scanner scan = new Scanner(System.in);
         int size1 = Integer.parseInt(scan.nextLine());
         int size2 = Integer.parseInt(scan.nextLine());
-
         String[] first = scan.nextLine().split(",");
         String[] second = scan.nextLine().split(",");
-        
         int[] firstarr;
         int[] secondarr;
         secondarr = new int[second.length];
