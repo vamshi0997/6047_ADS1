@@ -22,16 +22,15 @@ public final class Solution {
 
         String[] first = scan.nextLine().split(",");
         String[] second = scan.nextLine().split(",");
-        
         int[] firstarr;
         int[] secondarr;
         secondarr = new int[second.length];
 
-        if(first[0].equals("")) {
+        if (first[0].equals("")) {
             firstarr = new int[0];
         } else {
             firstarr = new int[first.length];
-            for(int i = 0; i < first.length; i++) {
+            for (int i = 0; i < first.length; i++) {
             firstarr[i] = Integer.parseInt(first[i]);
         }
 
