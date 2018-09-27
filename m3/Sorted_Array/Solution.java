@@ -4,11 +4,16 @@ import java.util.Arrays;
  * In solution class we have main method and other methods.
  */
 public final class Solution {
+	/**
+	 * default constructor.
+	 */
+	private Solution() {
+
+	}
     /**
-     * @brief [brief description]
-     * @details [long description]
-     * 
-     * @param String [description]
+     * main function where we initialize the two arrays.
+     *
+     * @param args command line arguments.
      */
     public static void main(final String[] args) {
         Scanner scan = new Scanner(System.in);
@@ -24,15 +29,14 @@ public final class Solution {
 
         if(first[0].equals("")) {
             firstarr = new int[0];
-        }
-        else {
+        } else {
             firstarr = new int[first.length];
-            for(int i = 0; i<first.length; i++) {
+            for(int i = 0; i < first.length; i++) {
             firstarr[i] = Integer.parseInt(first[i]);
         }
 
         }
-        for(int i = 0; i<second.length; i++) {
+        for (int i = 0; i < second.length; i++) {
             secondarr[i] = Integer.parseInt(second[i]);
         }
 
@@ -47,24 +51,24 @@ public final class Solution {
     public static void mergesort(final int[] firstarr, final int[] secondarr) {
         int i = 0;
         int j = 0;
-        int [] result;
-        result = new int[firstarr.length+secondarr.length];
+        int[] result;
+        result = new int[firstarr.length + secondarr.length];
         for (int k = 0; k < result.length; k++) {
             if (i < firstarr.length && j < secondarr.length) {
                 if (firstarr[i] < secondarr[j]) {
                     result[k] = firstarr[i++];
-                }
-                else
+                } else {
                     result[k] = secondarr[j++];
-            }
-            else if(i >= firstarr.length) {
+                }
+            } else if (i >= firstarr.length) {
                 result[k] = secondarr[j++];
-            }
-            else if(j >= secondarr.length) {
+            } else if (j >= secondarr.length) {
                 result[k] = firstarr[i++];
             }
         }
-        System.out.println(Arrays.toString(result).replace("[", "").replace("]","").replace(" ",""));
+        System.out.println(
+        	Arrays.toString(result).replace(
+        		"[", "").replace("]", "").replace(" ", ""));
     }
 
 }
