@@ -37,11 +37,11 @@ class LinkedStack {
 
 public final class Solution {
 	public static void main (String[] args) {
-		LinkedStack link = new LinkedStack();
         Scanner scan = new Scanner(System.in);
         int num = Integer.parseInt(scan.nextLine());
         while(scan.hasNext()) {
         	int flag = 0;
+        	LinkedStack link = new LinkedStack();
         	String[] str = scan.nextLine().split("");
         	//System.out.println(Arrays.toString(str));
         	for (int i = 0; i < str.length; i++) {
