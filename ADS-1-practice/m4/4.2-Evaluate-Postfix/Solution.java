@@ -4,13 +4,14 @@ import java.util.Scanner;
 /**
  * LinkedStack contain pop and push methods.
  */
-class LinkedStack <E> {
+class LinkedStack<E> {
     /**
      * Node first always points to top node in list.
      */
     private Node<E> first = null;
     /**
      * class node creates a new node each time.
+     * @param E for generic.
      */
     class Node<E> {
         /**
@@ -38,7 +39,7 @@ class LinkedStack <E> {
     }
     /**
      * push method is used to push the item.
-     * @param E element to push.
+     * @param item element to push.
      */
     public void push(final E item) {
         Node<E> oldfirst = first;
