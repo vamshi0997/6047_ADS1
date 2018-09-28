@@ -38,7 +38,7 @@ class LinkedStack <E> {
     }
     /**
      * push method is used to push the item.
-     * @param item element to push.
+     * @param E element to push.
      */
     public void push(final E item) {
         Node<E> oldfirst = first;
