@@ -3,6 +3,7 @@ import java.util.Scanner;
 
 /**
  * LinkedStack contain pop and push methods.
+ * @param <E> generic maode.
  */
 class LinkedStack<E> {
     /**
@@ -11,7 +12,7 @@ class LinkedStack<E> {
     private Node<E> first = null;
     /**
      * class node creates a new node each time.
-     * @param E for generic.
+     * @param <E> for generic.
      */
     class Node<E> {
         /**
