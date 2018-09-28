@@ -20,7 +20,7 @@ class LinkedStack <E> {
         /**
          * Node next.
          */
-        private Node next;
+        private Node<E> next;
         /**
          * returns the node name.
          * @return node.
@@ -42,7 +42,7 @@ class LinkedStack <E> {
      */
     public void push(final E item) {
         Node<E> oldfirst = first;
-        first = new Node();
+        first = new Node<E>();
         first.item = item;
         first.next = oldfirst;
     }
@@ -59,7 +59,7 @@ class LinkedStack <E> {
      * Gives the top node.
      * @return first or top Node.
      */
-    public Node getFirst() {
+    public Node<E> getFirst() {
         return first;
     }
 }
