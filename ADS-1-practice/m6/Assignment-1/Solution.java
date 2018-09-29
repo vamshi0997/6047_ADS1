@@ -6,19 +6,34 @@ class AddLargeNumbers {
         LinkedList<Character> link = new LinkedList<Character>();
         for (int i = number.length() - 1; i >= 0; i--) {
             link.add(0, number.charAt(i));
-            //System.out.print(number.charAt(i));
         }
-        //link.retrive();
         return link;
     }
 
     public static String digitsToNumber(LinkedList list) {
-        //System.out.println(list.display());
-        //list.display();
         return list.display();
     }
 
     public static LinkedList addLargeNumbers(LinkedList list1, LinkedList list2) {
+        //int a = Integer.valueOf((char) list1.remove(0));
+        //int a = Character.getNumericValue(list1.remove(0));
+        LinkedStack<Integer> stack = new LinkedStack<Integer>();
+        LinkedStack<Integer> stack1 = new LinkedStack<Integer>();
+        LinkedStack<Integer> stack2 = new LinkedStack<Integer>();
+        //System.out.println(list1.remove(0) + list1.remove(0));
+        for (int i = 0; i < list1.size(); i++) {
+            System.out.println(list1.remove(0));
+            //System.out.println(Integer.valueOf((char) list1.remove(0)));
+            //stack.push(Integer.valueOf((char) list1.remove(0)));
+        }
+        // while(!stack.isEmpty()) {
+        //     System.out.println(stack.pop());
+        // }
+
+        // for (int j = 0; j < list2.size(); j++) {
+        //     stack.push(list2.remove(0));
+        // }
+
         return null;
     }
 }

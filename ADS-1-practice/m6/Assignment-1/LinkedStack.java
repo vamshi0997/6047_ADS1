@@ -3,29 +3,31 @@ import java.util.Scanner;
 
 /**
  * LinkedStack contain pop and push methods.
+ * @param <E> generic maode.
  */
-class LinkedStack {
+class LinkedStack<E> {
     /**
      * Node first always points to top node in list.
      */
-    private Node first = null;
+    private Node<E> first = null;
     /**
      * class node creates a new node each time.
+     * @param <E> for generic.
      */
-    class Node {
+    class Node<E> {
         /**
          * String item name.
          */
-        private String item;
+        private E item;
         /**
          * Node next.
          */
-        private Node next;
+        private Node<E> next;
         /**
          * returns the node name.
          * @return node.
          */
-        public String getName() {
+        public E getName() {
             return this.item;
         }
     }
@@ -40,9 +42,9 @@ class LinkedStack {
      * push method is used to push the item.
      * @param item element to push.
      */
-    public void push(final String item) {
-        Node oldfirst = first;
-        first = new Node();
+    public void push(final E item) {
+        Node<E> oldfirst = first;
+        first = new Node<E>();
         first.item = item;
         first.next = oldfirst;
     }
@@ -50,8 +52,8 @@ class LinkedStack {
      * pop method is to remove the item.
      * @return the poped element.
      */
-    public String pop() {
-        String item = first.item;
+    public E pop() {
+        E item = first.item;
         first = first.next;
         return item;
     }
@@ -59,7 +61,45 @@ class LinkedStack {
      * Gives the top node.
      * @return first or top Node.
      */
-    public Node getFirst() {
+    public Node<E> getFirst() {
         return first;
     }
 }
+// /**
+//  * Solution class contain main method and other methods.
+//  */
+//  public final class Solution {
+
+//     /**
+//      * Constructs the object.
+//      */
+//     private Solution() {
+
+//     }
+
+//     /**
+//      * main takes input from user and prints output to console.
+//      *
+//      * @param      args  The commandline arguments
+//      */
+//     public static void main(final String[] args) {
+//         Scanner scan = new Scanner(System.in);
+//         String[] s = scan.nextLine().split(" ");
+//         LinkedStack<Integer> link = new LinkedStack<Integer>();
+//         for (int i = 0; i < s.length; i++) {
+//             try {
+//                 link.push(Integer.parseInt(s[i]));
+//             } catch (Exception e) {
+//                 int t1 = link.pop();
+//                 int t2 = link.pop();
+//                 if (s[i].equals("*")) {
+//                     link.push(t1 * t2);
+//                 } else if (s[i].equals("+")) {
+//                     link.push(t1 + t2);
+//                 }
+//             }
+//         }
+//         System.out.println(link.pop());
+//     }
+
+// }

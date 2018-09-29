@@ -35,19 +35,25 @@ class LinkedList<E> {
         size++;
     }
 
-	public void remove(int pos) {
-        if (pos < 0 || pos >= size) {
-        	return;
+	public E remove(int pos) {
+        if (pos < 0 || pos > size) {
+        	return null ;
         }
-        if (size == 1) {
-        	head = null;
-            size--;
-        	return;
-        }
+        // if (size == 1) {
+        // 	head = null;
+        //     size--;
+        // 	return head.data;
+        // }
         if (pos == 0) {
+            Node temp = head;
             head = head.next;
             size--;
-            return;
+            return temp.data;
+        }
+        if (size == 1) {
+            head = null;
+            size--;
+            return head.data;
         }
         //Node temp = new Node(item);
         Node current = head;
@@ -57,8 +63,13 @@ class LinkedList<E> {
         }
         current.next = current.next.next;
         size--;
+        return current.data;
 
 	}
+    public int size() {
+        return size;
+    }
+
     public String display() {
         String s = "";
         if (size == 0) {
