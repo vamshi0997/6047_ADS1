@@ -1,53 +1,60 @@
 import java.util.Scanner;
+/**
+ * Adding AddLargeNumbers.
+ */
 class AddLargeNumbers {
     //LinkedList<Character> link = new LinkedList<Character>();
-    
-    public static LinkedList numberToDigits(String number) {
+    /**
+     * @param number String.
+     * @return Linkedlist.
+     */
+    public static LinkedList numberToDigits(final String number) {
         LinkedList<Character> link = new LinkedList<Character>();
         for (int i = number.length() - 1; i >= 0; i--) {
             link.add(0, number.charAt(i));
         }
         return link;
     }
-
-    public static String digitsToNumber(LinkedList list) {
+    /**
+     * @param list Linkedlist.
+     * @return String.
+     */
+    public static String digitsToNumber(final LinkedList list) {
         return list.display();
     }
-
-    public static LinkedList addLargeNumbers(LinkedList list1, LinkedList list2) {
+    /**
+     * @return Linkedlist
+     */
+    public static LinkedList addLargeNumbers(final LinkedList list1, final LinkedList list2) {
         //int a = Integer.valueOf((Character) list1.remove(0));
         System.out.println(list1.remove(0) + list1.remove(0));
-        //int a = Character.getNumericValue(list1.remove(0));
-        //LinkedList<list1> stack = new LinkedList<list1>();
-        // LinkedStack<Integer> stack1 = new LinkedStack<Integer>();
-        // LinkedStack<Integer> stack2 = new LinkedStack<Integer>();
-        //System.out.println(list1.remove(0) + list1.remove(0));
+        
         for (int i = list1.size(); i > 0; i--) {
             //stack.add(list1.remove(0));
-            //System.out.println(list1.remove(0));
-            //System.out.println(Integer.valueOf((char) list1.remove(0)));
-            //stack.push(Integer.valueOf((char) list1.remove(0)));
         }
         list1.display();
-        // while(!stack.isEmpty()) {
-        //     System.out.println(stack.pop());
-        // }
-
-        // for (int j = 0; j < list2.size(); j++) {
-        //     stack.push(list2.remove(0));
-        // }
-
         return null;
     }
 }
+/**
+ * Solution class.
+ */
+public final class Solution {
+    /**
+     * default constructor.
+     */
+    private Solution() {
 
-public class Solution {
-    public static void main(String[] args) {
+    }
+    /**
+     * @param args command line.
+     */
+    public static void main(final String[] args) {
         Scanner sc = new Scanner(System.in);
         String input = sc.nextLine();
         String p = sc.nextLine();
         String q = sc.nextLine();
-        switch(input){
+        switch(input) {
             case "numberToDigits":
                 LinkedList pDigits = AddLargeNumbers.numberToDigits(p);
                 LinkedList qDigits = AddLargeNumbers.numberToDigits(q);
@@ -58,10 +65,12 @@ public class Solution {
             case "addLargeNumbers":
                 pDigits = AddLargeNumbers.numberToDigits(p);
                 qDigits = AddLargeNumbers.numberToDigits(q);
-                LinkedList result = AddLargeNumbers.addLargeNumbers(pDigits, qDigits);
+                LinkedList result =
+                AddLargeNumbers.addLargeNumbers(pDigits, qDigits);
                 System.out.println(AddLargeNumbers.digitsToNumber(result));
                 break;
+            default:
+                break;
         }
-    }
-    
+    } 
 }
