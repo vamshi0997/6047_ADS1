@@ -35,25 +35,25 @@ class LinkedList<E> {
         size++;
     }
 
-	public E remove(int pos) {
+	public int remove(int pos) {
+        int a = 0;
         if (pos < 0 || pos > size) {
-        	return null ;
+        	return 0;
         }
-        // if (size == 1) {
-        // 	head = null;
-        //     size--;
-        // 	return head.data;
-        // }
-        if (pos == 0) {
-            Node temp = head;
-            head = head.next;
-            size--;
-            return temp.data;
-        }
+        Node temp = head;
         if (size == 1) {
             head = null;
             size--;
-            return head.data;
+            a = (int)temp.data;
+            return a;
+        }
+        if (pos == 0) {
+            head = head.next;
+            size--;
+            //a = Integer.valueOf(temp.data);
+            //return (int)temp.data;
+            a = (int)temp.data;
+            return a;
         }
         //Node temp = new Node(item);
         Node current = head;
@@ -63,7 +63,9 @@ class LinkedList<E> {
         }
         current.next = current.next.next;
         size--;
-        return current.data;
+        a = (int)current.data;
+        return a;
+        //return (int)current.data;
 
 	}
     public int size() {

@@ -15,17 +15,20 @@ class AddLargeNumbers {
     }
 
     public static LinkedList addLargeNumbers(LinkedList list1, LinkedList list2) {
-        //int a = Integer.valueOf((char) list1.remove(0));
+        //int a = Integer.valueOf((Character) list1.remove(0));
+        System.out.println(list1.remove(0) + list1.remove(0));
         //int a = Character.getNumericValue(list1.remove(0));
-        LinkedStack<Integer> stack = new LinkedStack<Integer>();
-        LinkedStack<Integer> stack1 = new LinkedStack<Integer>();
-        LinkedStack<Integer> stack2 = new LinkedStack<Integer>();
+        //LinkedList<list1> stack = new LinkedList<list1>();
+        // LinkedStack<Integer> stack1 = new LinkedStack<Integer>();
+        // LinkedStack<Integer> stack2 = new LinkedStack<Integer>();
         //System.out.println(list1.remove(0) + list1.remove(0));
-        for (int i = 0; i < list1.size(); i++) {
-            System.out.println(list1.remove(0));
+        for (int i = list1.size(); i > 0; i--) {
+            //stack.add(list1.remove(0));
+            //System.out.println(list1.remove(0));
             //System.out.println(Integer.valueOf((char) list1.remove(0)));
             //stack.push(Integer.valueOf((char) list1.remove(0)));
         }
+        list1.display();
         // while(!stack.isEmpty()) {
         //     System.out.println(stack.pop());
         // }
