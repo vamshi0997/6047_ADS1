@@ -40,8 +40,8 @@ class Solution {
                     default:
                     break;
         		}
-                System.out.println();
         	}
+            System.out.println();
         }
 	}
 }
