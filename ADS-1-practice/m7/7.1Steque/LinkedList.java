@@ -118,7 +118,7 @@ class LinkedList<E> {
 		}
 		Node temp = head;
 		while (temp.link != null) {
-			System.out.print(temp.data + ",");
+			System.out.print(temp.data + " ,");
 			temp = temp.link;
 		}
 		System.out.println(temp.data);
