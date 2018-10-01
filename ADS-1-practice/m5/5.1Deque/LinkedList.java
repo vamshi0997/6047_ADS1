@@ -93,11 +93,13 @@ class LinkedList<E> {
 			return;
 		}
 		if (head.link == null) {
-			System.out.println(head.data);
+			System.out.print("[");
+			System.out.print(head.data);
+            System.out.println("]");
 			return;
 		}
 		Node temp = head;
-		System.out.println("[");
+		System.out.print("[");
 		while (temp.link != null) {
 			System.out.print(temp.data + " ,");
 			temp = temp.link;
