@@ -1,6 +1,7 @@
 import java.util.Scanner;
 /**
- * Deque class contain methods such as push right, push left, pop left, pop left.
+ * Deque class contain methods such as
+ * push right, push left, pop left, pop left.
  */
 class Deque {
     /**
@@ -12,7 +13,7 @@ class Deque {
      *
      * @param num element to be pushed.
      */
-    public void pushLeft(int num) {
+    public void pushLeft(final int num) {
         l.insertAtStart(num);
         l.display();
     }
@@ -21,7 +22,7 @@ class Deque {
      *
      * @param num element to be pushed.
      */
-    public void pushRight(int num) {
+    public void pushRight(final int num) {
         l.insertAtEnd(num);
         l.display();
     }
