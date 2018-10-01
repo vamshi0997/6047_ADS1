@@ -39,7 +39,7 @@ class Solution {
 				d.pushRight(Integer.parseInt(token[1]));
 				break;
 				case "popLeft":
-				d.popRight();
+				d.popLeft();
 				break;
 				case "popRight":
 				d.popRight();
