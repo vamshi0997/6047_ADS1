@@ -10,10 +10,18 @@ class Deque {
 		l.display();
 	}
 	public void popLeft() {
+		if (l.size == 0) {
+			System.out.println("Deck is empty");
+			return;
+		}
 		l.deleteAtStart();
 		l.display();
 	}
 	public void popRight() {
+		if (l.size == 0) {
+			System.out.println("Deck is empty");
+			return;
+		}
 		l.deleteAtEnd();
 		l.display();
 	}
