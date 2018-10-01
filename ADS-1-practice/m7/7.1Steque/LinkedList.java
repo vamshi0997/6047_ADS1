@@ -109,7 +109,7 @@ class LinkedList<E> {
 
 	void display1() {
 		if (size == 0) {
-			System.out.println("Steque is empty");
+			System.out.println("Steque is empty.");
 			return;
 		}
 		if (head.link == null) {
