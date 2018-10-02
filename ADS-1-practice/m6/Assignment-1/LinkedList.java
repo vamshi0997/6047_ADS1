@@ -1,133 +1,146 @@
-class LinkedList<E> {
-    private Node head;
-    private int size = 0;
-
-	class Node {
-		private E data;
-		private Node next;
-        Node(E data1) {
-            this.data = data1;
-            this.next = null;
-        }
-        public E getData() {
-            return this.data;
-        }
-	}
-
-	public void add(int pos, E item) {
-		Node temp = new Node(item);
-        if(pos < 0 || pos > size) {
-            return;
-        }
-		if (pos == 0) {
-            temp.next = head;
-            head = temp;
-            size++;
-            return;
-		}
-        int count = 0;
-        Node current = head;
-        while (count++ < pos - 1) {
-        	current = current.next; 
-        }
-        temp.next = current.next;
-        current.next = temp;
-        size++;
-    }
-
-	public int remove(int pos) {
-        int a = 0;
-        if (pos < 0 || pos > size) {
-        	return 0;
-        }
-        Node temp = head;
-        if (size == 1) {
-            head = null;
-            size--;
-            a = (int)temp.data;
-            return a;
-        }
-        if (pos == 0) {
-            head = head.next;
-            size--;
-            //a = Integer.valueOf(temp.data);
-            //return (int)temp.data;
-            a = (int)temp.data;
-            return a;
-        }
-        //Node temp = new Node(item);
-        Node current = head;
-        int count = 0;
-        while (count++ < pos - 1) {
-            current = current.next;
-        }
-        current.next = current.next.next;
-        size--;
-        a = (int)current.data;
-        return a;
-        //return (int)current.data;
-
-	}
-    public int size() {
-        return size;
-    }
-
-    public String display() {
-        String s = "";
-        if (size == 0) {
-            return s;
-        }
-        if (size == 1) {
-            s += head.data;
-            return s;
-        }
-        Node current = head;
-        int count = 0;
-        while (count++ < size - 1) {
-            s += current.data;
-            //System.out.print(current.data + "->");
-            current = current.next;
-        }
-        //System.out.println(current.data);
-        s += current.data;
-        return s;
-          
-    }
-
-	public void retrive() {
-        if (size == 0) {
-            return;
-        }
-        if (size == 1) {
-            System.out.println(head.data);
-            return;
-        }
-		Node current = head;
-        int count = 0;
-        while (count++ < size - 1) {
-            System.out.print(current.data + "->");
-            current = current.next;
-        }
-        System.out.println(current.data);
-	}
+class Node {
+		String data;
+		Node link;
 }
 
-// class Solution1 {
-// 	public static void main(String[] args) {
-// 		LinkedList<Integer> l = new LinkedList<Integer>();
-// 		l.add(0, 2);
-//         l.retrive();
-// 		l.add(1, 4);
-//         l.retrive();
-// 		l.add(2, 3);
-//         l.retrive();
-//         l.add(1,5);
-//         l.retrive();
-//         l.add(0,7);
-//         l.retrive();
-//         l.add(6,4);
-//         //l.add(4,10);
-//         l.remove(5);
-//         l.retrive();
-// 	}
-// }
+
+class LinkedList {
+	Node head;
+	int size;
+	void insertAtStart(String data) {
+		Node node = new Node();
+		size++;
+		if (head == null) {
+			node.data = data;
+			node.link = null;
+			head = node;
+		} else {
+			node.data = data;
+			node.link = head;
+			head = node;
+		}
+	}
+	void insertAtEnd(String data) {
+		Node node = new Node();
+		size++;
+		if (head == null) {
+			node.data = data;
+			node.link = null;
+			head = node;
+		} else {
+			Node temp = head;
+			while (temp.link != null) {
+				temp = temp.link;
+			}
+			node.data = data;
+			temp.link = node;
+			node.link = null;
+		}
+	}
+	void insertAtPos(String data, int pos) {
+		Node node = new Node();
+		if (pos == 0) {
+			return;
+		}
+		if (pos == 1) {
+			insertAtStart(data);
+			return;
+		}
+		pos--;
+		Node temp = head;
+		while (pos != 1) {
+			temp = temp.link;
+			pos--;
+		}
+		node.data = data;
+		node.link = temp.link;
+		temp.link = node;
+		size++;
+	}
+	String deleteAtStart() {
+		String str = "";
+		if (size == 0) {
+			return null;
+		}
+		Node node = new Node();
+		str += "" + head.data;
+		Node temp = head;
+		temp = temp.link;
+		head.link = null;
+		head = temp;
+		size--;
+		return str;
+	}
+	String deleteAtEnd() {
+		// if (size == 1) {
+		// 	deleteAtStart();
+		// 	break;
+		// }
+		String str = "";
+		Node node = new Node();
+		Node temp = head;
+		while (temp.link.link != null) {
+			temp = temp.link;
+		}
+		str = "" + temp.link.data;
+		temp.link = null;
+		//str += "" + temp.data;
+		size--;
+		return str;
+	}
+	String deleteAtPos(int pos) {
+		String str = "";
+		if (pos == 0) return null;
+		if (pos == 1) {
+			str += deleteAtStart();
+			return str;
+		}
+		pos--;
+		Node temp = head;
+		while (pos != 1) {
+			temp = temp.link;
+			pos--;
+		}
+		str = "" + temp.link.data;
+		temp.link = temp.link.link;
+		size--;
+		return str;
+	}
+	void display() {
+		if (size == 0) {
+			System.out.println("Empty");
+			return;
+		}
+		if (head.link == null) {
+			System.out.println(head.data);
+			return;
+		}
+		Node temp = head;
+		while (temp.link != null) {
+			System.out.print(temp.data + "->");
+			temp = temp.link;
+		}
+		System.out.println(temp.data);
+	}
+
+	String display1() {
+		String str = "";
+		if (size == 0) {
+			return null;
+		}
+		if (head.link == null) {
+			str = "" + head.data;
+			return str;
+		}
+		Node temp = head;
+		while (temp.link != null) {
+			str += "" + temp.data;
+			//System.out.println(str);
+			temp = temp.link;
+		}
+		//System.out.println(temp.data);
+		//System.out.println("inside:" + str);
+		str += "" + temp.data;
+		return str;
+	}
+}

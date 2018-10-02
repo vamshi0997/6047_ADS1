@@ -3,38 +3,73 @@ import java.util.Scanner;
  * Adding AddLargeNumbers.
  */
 class AddLargeNumbers {
-    //LinkedList<Character> link = new LinkedList<Character>();
     /**
      * @param number String.
      * @return Linkedlist.
      */
     public static LinkedList numberToDigits(final String number) {
-        LinkedList<Character> link = new LinkedList<Character>();
-        for (int i = number.length() - 1; i >= 0; i--) {
-            link.add(0, number.charAt(i));
+        LinkedList link = new LinkedList();
+        String[] num = number.split("");
+        for (int i = num.length - 1; i >= 0; i--) {
+            link.insertAtStart(num[i]);
         }
         return link;
     }
+
     /**
      * @param list Linkedlist.
      * @return String.
      */
     public static String digitsToNumber(final LinkedList list) {
-        return list.display();
+        return list.display1();
     }
     /**
+     * @param
      * @return Linkedlist
      */
     public static LinkedList addLargeNumbers(final LinkedList list1, final LinkedList list2) {
-        //int a = Integer.valueOf((Character) list1.remove(0));
-        System.out.println(list1.remove(0) + list1.remove(0));
-        
-        for (int i = list1.size(); i > 0; i--) {
-            //stack.add(list1.remove(0));
+        LinkedStack<String> stack1 = new LinkedStack<String>();
+        LinkedStack<String> stack2 = new LinkedStack<String>();
+        LinkedList linklist = new LinkedList();
+        final int ten = 10;
+        Node temp = new Node();
+        temp.link = list1.head; 
+        while(temp.link != null) {
+            stack1.push(temp.data);
+            temp = temp.link;
         }
-        list1.display();
-        return null;
+        stack1.push(temp.data);
+        Node temp1 = new Node();
+        temp1.link = list2.head;
+        while(temp1.link != null) {
+            stack2.push(temp1.data);
+            temp = temp.link;
+        }
+        stack2.push(temp.data);
+        int result = 0, firstele = 0, secele = 0, temp2 = 0;
+         while (!stack1.isEmpty() || !stack2.isEmpty()) {
+            if (stack1.isEmpty()) {
+                secele = Integer.parseInt(stack2.pop());
+                temp2 = result / ten;
+                result = secele + temp2;
+            } else if (stack2.isEmpty()) {
+                firstele = Integer.parseInt(stack1.pop());
+                temp2 = result / ten;
+                result = firstele + temp2;
+            } else {
+                firstele = Integer.parseInt(stack1.pop());
+                secele = Integer.parseInt(stack2.pop());
+                temp2 = result / ten;
+                result = firstele + secele + temp2;
+            }
+            linklist.insertAtStart(Integer.toString(result % ten));
+        }
+        if (stack1.size == stack2.size) {
+            linklist.insertAtStart(Integer.toString(result / ten));
+        }
+        return linklist;
     }
+        
 }
 /**
  * Solution class.
@@ -54,7 +89,7 @@ public final class Solution {
         String input = sc.nextLine();
         String p = sc.nextLine();
         String q = sc.nextLine();
-        switch(input) {
+        switch (input) {
             case "numberToDigits":
                 LinkedList pDigits = AddLargeNumbers.numberToDigits(p);
                 LinkedList qDigits = AddLargeNumbers.numberToDigits(q);
@@ -72,5 +107,5 @@ public final class Solution {
             default:
                 break;
         }
-    } 
+    }
 }
