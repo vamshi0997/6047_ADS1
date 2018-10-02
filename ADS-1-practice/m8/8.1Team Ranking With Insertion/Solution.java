@@ -4,7 +4,7 @@ class Team implements Comparable<Team> {
 	int wins;
 	int draws;
 	int losses;
-	Team(final String teamname1, final int wins1, final int draws1, final int losses1) {
+	Team(final String teamname1, final int wins1, final int losses1, final int draws1) {
 		this.teamname = teamname1;
 		this.wins = wins1;
 		this.draws = draws1;
@@ -44,10 +44,10 @@ class Team implements Comparable<Team> {
 			return -1;
 		}
 		if (this.draws > team.draws) {
-			return -1;
+			return 1;
 		}
 		if (this.draws < team.draws) {
-			return 1;
+			return -1;
 		}
 		return 0;  
 	}
