@@ -23,7 +23,7 @@ public final class Solution {
             String[] line = scan.nextLine().split(",");
             Team t = new Team(line[0], Integer.parseInt(line[1]),
                 Integer.parseInt(line[2]),
-                Integer.parseInt(line[2+1]));
+                Integer.parseInt(line[2 + 1]));
             t1.add(t);
         }
         System.out.println(t1.sort());
