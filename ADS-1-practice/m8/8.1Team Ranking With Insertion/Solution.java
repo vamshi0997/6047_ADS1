@@ -39,10 +39,10 @@ class Team implements Comparable<Team> {
         	return -1;
         }
         if (this.losses < team.losses) {
-        	return -1;
+        	return 1;
         }
         if (this.losses > team.losses) {
-        	return 1;
+        	return -1;
         }
         if (this.draws > team.draws) {
         	return -1;
