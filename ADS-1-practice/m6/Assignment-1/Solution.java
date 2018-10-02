@@ -43,7 +43,7 @@ class AddLargeNumbers {
         temp1.link = list2.head;
         while(temp1.link != null) {
             stack2.push(temp1.data);
-            temp = temp.link;
+            temp1 = temp1.link;
         }
         stack2.push(temp.data);
         int result = 0, firstele = 0, secele = 0, temp2 = 0;
