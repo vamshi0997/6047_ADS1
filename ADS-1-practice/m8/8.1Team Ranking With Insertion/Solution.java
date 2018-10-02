@@ -125,6 +125,6 @@ public final class Solution {
 				Integer.parseInt(line[2]), Integer.parseInt(line[3]));
 			t1.add(t);
 		}
-		System.out.println(t1);
+		System.out.println(t1.sort());
 	}
 }
