@@ -31,24 +31,18 @@ class Team implements Comparable<Team> {
 	}
 
 	public int compareTo(Team team) {
-		if (this.wins < team.wins) {
-			return -1;
-		}
 		if (this.wins > team.wins) {
 			return 1;
 		}
-		// if (this.wins < team.wins) {
-		// 	return -1;
-		// }
+		if (this.wins < team.wins) {
+			return -1;
+		}
 		if (this.losses < team.losses) {
 			return 1;
 		}
 		if (this.losses > team.losses) {
 			return -1;
 		}
-		// if (this.losses < team.losses) {
-		// 	return 1;
-		// }
 		if (this.draws > team.draws) {
 			return 1;
 		}
@@ -93,9 +87,9 @@ class Teams {
 
 class SeletionSort {
 	Team[] sort(Team[] team, int size) {
-		for(int i = 0; i < size; i++) {
+		for(int i = 0; i < size - 1; i++) {
 			int temp = i;
-			for(int j = i+1; j < size-1; j++) {
+			for(int j = i+1; j < size; j++) {
                if (less(team, j, temp)) {
 					temp = j;
 				}
