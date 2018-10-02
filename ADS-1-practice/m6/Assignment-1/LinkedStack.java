@@ -66,7 +66,4 @@ class LinkedStack<E> {
     public Node<E> getFirst() {
         return first;
     }
-    public String display() {
-        return null;
-    }
 }
