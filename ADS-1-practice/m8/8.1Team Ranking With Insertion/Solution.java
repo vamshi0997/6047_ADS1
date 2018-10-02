@@ -37,10 +37,10 @@ class Team implements Comparable<Team> {
 		if (this.wins < team.wins) {
 			return -1;
 		}
-		if (this.losses < team.losses) {
+		if (this.losses > team.losses) {
 			return -1;
 		}
-		if (this.losses > team.losses) {
+		if (this.losses < team.losses) {
 			return 1;
 		}
 		if (this.draws > team.draws) {
@@ -73,13 +73,13 @@ class Teams {
 		}
 		return s.substring(0, s.length() - 1);
 	}
-	public String toString() {
-		String s = "";
-		for (int i = 0; i < size; i++) {
-			s += team1[i].getTeam()+",";
-		}
-		return s.substring(0, s.length() - 1);
-	}
+	// public String toString() {
+	// 	String s = "";
+	// 	for (int i = 0; i < size; i++) {
+	// 		s += team1[i].getTeam()+",";
+	// 	}
+	// 	return s.substring(0, s.length() - 1);
+	// }
 	public int getSize() {
 		return size;
 	}
@@ -87,9 +87,9 @@ class Teams {
 
 class SeletionSort {
 	Team[] sort(Team[] team, int size) {
-		for(int i = 0; i < size - 1; i++) {
+		for(int i = 0; i < size; i++) {
 			int temp = i;
-			for(int j = i+1; j < size; j++) {
+			for(int j = i+1; j < size-1; j++) {
                if (less(team, j, temp)) {
 					temp = j;
 				}
