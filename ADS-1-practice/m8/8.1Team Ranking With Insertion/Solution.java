@@ -65,9 +65,14 @@ class Teams {
         team1[size++] = team;
 	}
 
-	public Team[] sort() {
-		SeletionSort s = new SeletionSort();
-		return s.sort(team1, size);
+	public String sort() {
+		String s = "";
+		SeletionSort s1 = new SeletionSort();
+		Team[] team2 = s1.sort(team1, size);
+		for (int i = 0; i < size; i++) {
+			s += team2[i].getTeam()+",";
+		}
+		return s.substring(0, s.length() - 1);
 	}
 	public String toString() {
 		String s = "";
@@ -112,13 +117,14 @@ public final class Solution {
 	public static void main(final String[] args) {
 		Scanner scan = new Scanner(System.in);
 		Teams t1 = new Teams();
+		Teams t2 = new Teams();
+		SeletionSort s1 = new SeletionSort();
 		while(scan.hasNext()) {
 			String[] line = scan.nextLine().split(",");
 			Team t = new Team(line[0], Integer.parseInt(line[1]),
 				Integer.parseInt(line[2]), Integer.parseInt(line[3]));
 			t1.add(t);
 		}
-		t1.sort();
 		System.out.println(t1);
 	}
 }
