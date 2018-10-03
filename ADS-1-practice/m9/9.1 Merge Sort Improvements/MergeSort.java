@@ -88,7 +88,7 @@ class MergeSort {
     public void insertionSort(final Comparable[] cmp,
         final int low, final int high) {
         for (int i = low; i <= high; i++) {
-            for (int j = i; j > low && less(cmp[j], cmp[j]); j--) {//
+            for (int j = i; j > low && less(cmp[j], cmp[j - 1]); j--) {
                 exchange(cmp, j, j - 1);
             }
         }
@@ -138,7 +138,7 @@ class MergeSort {
      */
     public boolean isSorted(final Comparable[] cmp,
         final int low, final int high) {
-        for (int i = low + 1; i <= high; i++) {
+        for (int i = low + 1; i < high; i++) {//
             if (less(cmp[i], cmp[i - 1])) {
                 return false;
             }
