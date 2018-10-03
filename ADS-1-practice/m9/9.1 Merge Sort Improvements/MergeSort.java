@@ -62,7 +62,7 @@ class MergeSort {
                 auxilary[i] = array[i];
             }
             System.out.println(
-                "Array is already sorted. So, skipped the call to merge.");//
+                "Array is already sorted. So, skipped the call to merge...");
             return;
         }
         merge(array, auxilary, low, mid, high);
@@ -88,7 +88,7 @@ class MergeSort {
     public void insertionSort(final Comparable[] cmp,
         final int low, final int high) {
         for (int i = low; i <= high; i++) {
-            for (int j = i; j > low && less(cmp[j], cmp[j - 1]); j--) {
+            for (int j = i; j > low && less(cmp[j], cmp[j]); j--) {//
                 exchange(cmp, j, j - 1);
             }
         }
