@@ -10,18 +10,20 @@ public final class Solution {
 
     }
     /**
-     * main method for handling input.
+     * main method uses to handle input.
+     *
      * @param args commandLine arguments.
      */
     public static void main(final String[] args) {
         LinkedList list = new LinkedList();
         Scanner scan = new Scanner(System.in);
-        while(scan.hasNext()) {
+        while (scan.hasNext()) {
             String[] line = scan.nextLine().split(" ");
-            switch(line[0]) {
+            switch (line[0]) {
             case "insertAt":
                 try {
-                    list.insert(Integer.parseInt(line[1]), Integer.parseInt(line[2]));
+                    list.insert(Integer.parseInt(
+                        line[1]), Integer.parseInt(line[2]));
                     list.print();
                 } catch (Exception e) {
                     System.out.println(e.getMessage());
