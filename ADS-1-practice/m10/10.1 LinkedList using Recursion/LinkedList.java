@@ -31,7 +31,6 @@ class LinkedList{
         nPos++;
         current.next = insert(current.next, temp, position, nPos);
         return current;
-
     }
 
     public void insert(int position, int data) throws Exception{
@@ -61,18 +60,15 @@ class LinkedList{
         System.out.println(result);
     }
 
-    private Node reverse(Node current, Node prev){
-
-
-
+    private Node reverse(Node current, Node previous){
         if(current.next == null){
             head = current;
-            head.next = prev;
+            head.next = previous;
             return null;
         }
 
         Node temp = current.next;
-        current.next = prev;
+        current.next = previous;
 
         reverse(temp,current);
         return head;
