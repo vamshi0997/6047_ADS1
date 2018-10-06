@@ -61,24 +61,24 @@ class Student implements Comparable<Student>{
 		if (this.subject2 < stud.subject2) {
 			return -1;
 		}
-		// if (this.year > stud.year) {
-		// 	return 1;
-		// }
-		// if (this.year < stud.year) {
-		// 	return -1;
-		// }
-		// if (this.month > stud.month) {
-		// 	return 1;
-		// }
-		// if (this.month < stud.month) {
-		// 	return -1;
-		// }
-		// if (this.date > stud.date) {
-		// 	return 1;
-		// }
-		// if (this.date < stud.date) {
-		// 	return -1;
-		// }
+		if (this.year > stud.year) {
+			return 1;
+		}
+		if (this.year < stud.year) {
+			return -1;
+		}
+		if (this.month > stud.month) {
+			return 1;
+		}
+		if (this.month < stud.month) {
+			return -1;
+		}
+		if (this.date > stud.date) {
+			return 1;
+		}
+		if (this.date < stud.date) {
+			return -1;
+		}
 
 
 		return 0;
