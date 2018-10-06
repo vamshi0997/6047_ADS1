@@ -171,8 +171,7 @@ Priyanka,70,Open
 Tanya,66,BC 
 Abhishek,60,BC 
 
-divya,99,Open 
-Aditya,80,ST
+divya,99,Open
 ----------------------------------------
 ########## Testcase 3: Failed ##########
 Expected Output: 
@@ -385,7 +384,5 @@ Raj,87,BC
 mahesh,87,BC 
 riya,83,Open 
 divya,99,ST 
-Ira,93,ST 
-Aditya,80,ST 
-shyam,71,ST
+Ira,93,ST
 ----------------------------------------

@@ -27,7 +27,7 @@ class Selection {
                 s += stud[i].getName()+","+stud[i].getTot()+","+stud[i].getCat() + " \n";
 			}
         for (int j = 0; j < vacancies; j++) {
-        	    if(stud[j].getCat().equals("ST"))
+        	    if(stud[j].getCat().equals("ST") && s.contains(stud[j].getName()))
                 s += stud[j].getName()+","+stud[j].getTot()+","+stud[j].getCat() + " \n";
 			}
 		return s.substring(0, s.length() - 1);
