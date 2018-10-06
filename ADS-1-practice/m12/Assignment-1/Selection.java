@@ -21,8 +21,10 @@ class Selection {
 
 	public String sort1(int vacancies, int unreserved, int bcvacancies, int scvacancies, int stvancancies) {
 		String str = "";
+		int size1 = 0;
 		SeletionSort s2 = new SeletionSort();
 		Student[] stud = s2.sort(nstudent, size);
+		Student[] stud1 = new Student[10];
 		int count1 = 0;
 		for (int i = 0; i < unreserved; i++) {
                 str += stud[i].getName()+","+stud[i].getTot()+","+stud[i].getCat() + "\n";
@@ -54,9 +56,14 @@ class Selection {
 			}
 		for (int j = 0; j < size; j++) {
 			if(!str.contains(stud[j].getName()) && count1 < vacancies) {
-               str += stud[j].getName()+","+stud[j].getTot()+","+stud[j].getCat() + "\n";
-               count1++;
+            stud1[size1++] = stud[j];
+            //str += stud[j].getName()+","+stud[j].getTot()+","+stud[j].getCat() + "\n";
+            count1++;
 		    }
+        }
+        Student[] nstud = s2.sort(stud1, size1);
+        for(int j = 0; j < size1; j++) {
+        	str += nstud[j].getName()+","+nstud[j].getTot()+","+nstud[j].getCat() + "\n";
         }
 		return str.substring(0, str.length() - 1);
 	}
