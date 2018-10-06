@@ -14,55 +14,53 @@ class Selection {
 		SeletionSort s1 = new SeletionSort();
 		Student[] stud = s1.sort(nstudent, size);
 		for (int i = 0; i < size; i++) {
-			s += stud[i].getName()+","+stud[i].getTot()+","+stud[i].getCat() + " \n";
+			s += stud[i].getName()+","+stud[i].getTot()+","+stud[i].getCat() + "\n";
 		}
 		return s.substring(0, s.length() - 1);
 	}
 
 	public String sort1(int vacancies, int unreserved, int bcvacancies, int scvacancies, int stvancancies) {
-		String s = "";
-		SeletionSort s1 = new SeletionSort();
-		Student[] stud = s1.sort(nstudent, size);
+		String str = "";
+		SeletionSort s2 = new SeletionSort();
+		Student[] stud = s2.sort(nstudent, size);
+		int count1 = 0;
 		for (int i = 0; i < unreserved; i++) {
-                s += stud[i].getName()+","+stud[i].getTot()+","+stud[i].getCat() + " \n";
+                str += stud[i].getName()+","+stud[i].getTot()+","+stud[i].getCat() + "\n";
+                count1++;
 			}
-        for (int j = 0; j < vacancies; j++) {
-        	    //if(stud[j].getCat().equals("ST"))
-                s += stud[j].getName()+","+stud[j].getTot()+","+stud[j].getCat() + " \n";
+		int count = 1;
+        for (int j = 0; j < size; j++) {
+        		if (stud[j].getCat().equals("BC") && !str.contains(stud[j].getName()) && count <= bcvacancies) {
+                    str += stud[j].getName()+","+stud[j].getTot()+","+stud[j].getCat() + "\n";
+                    count++;
+                    count1++;
+        		}
+		}
+		count = 1;
+		for (int j = 0; j < size; j++) {
+        		if (stud[j].getCat().equals("ST") && !str.contains(stud[j].getName()) && count <= stvancancies) {
+                    str += stud[j].getName()+","+stud[j].getTot()+","+stud[j].getCat() + "\n";
+                    count++;
+                    count1++;
+        		}
+		 }
+		count = 1;
+		for (int j = 0; j < size; j++) {
+        		if (stud[j].getCat().equals("SC") && !str.contains(stud[j].getName()) && count <= scvacancies) {
+                    str += stud[j].getName()+","+stud[j].getTot()+","+stud[j].getCat() + "\n";
+                    count++;
+                    count1++;
+        		}
 			}
-		return s.substring(0, s.length() - 1);
+		for (int j = 0; j < size; j++) {
+			if(!str.contains(stud[j].getName()) && count1 < vacancies) {
+               str += stud[j].getName()+","+stud[j].getTot()+","+stud[j].getCat() + "\n";
+               count1++;
+		    }
+        }
+		return str.substring(0, str.length() - 1);
 	}
-
-
-
 }
-
-// class Insertion{
-
-// 	public Insertion() {}
-
-// 	public static Object sort(Object[] a, Comparator comparator) {
-//         int n = a.length;
-//         for (int i = 0; i < n; i++) {
-//             for (int j = i; j > 0 && less(a[j], a[j-1], comparator); j--) {
-//                 exch(a, j, j-1);
-//             }
-//             // assert isSorted(a, 0, i, comparator);
-//         }
-//         // assert isSorted(a, comparator);
-//     }
-
-
-//     private static  boolean less(Object v, Object w, Comparator comparator) {
-//         return comparator.compare(v, w) < 0;
-//     }
-
-//     private static void exch(Object[] a, int i, int j) {
-//         Object swap = a[i];
-//         a[i] = a[j];
-//         a[j] = swap;
-//     }
-// }
 
 class SeletionSort {
     // /**

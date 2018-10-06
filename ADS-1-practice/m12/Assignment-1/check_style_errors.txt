@@ -5,6 +5,11 @@ Starting audit...
 [ERROR] /Users/apple/6047_ADS1/ADS-1-practice/m12/Assignment-1/Student.java:5:1: File contains tab characters (this is the first instance). [FileTabCharacter]
 [ERROR] /Users/apple/6047_ADS1/ADS-1-practice/m12/Assignment-1/Student.java:5:9: Missing a Javadoc comment. [JavadocVariable]
 [ERROR] /Users/apple/6047_ADS1/ADS-1-practice/m12/Assignment-1/Student.java:6:9: Missing a Javadoc comment. [JavadocVariable]
+[ERROR] /Users/apple/6047_ADS1/ADS-1-practice/m12/Assignment-1/Student.java:7:15: Missing a Javadoc comment. [JavadocVariable]
+[ERROR] /Users/apple/6047_ADS1/ADS-1-practice/m12/Assignment-1/Student.java:7:18: Variable 'ndob' must be private and have accessor methods. [VisibilityModifier]
+[ERROR] /Users/apple/6047_ADS1/ADS-1-practice/m12/Assignment-1/Student.java:8:9: Missing a Javadoc comment. [JavadocVariable]
+[ERROR] /Users/apple/6047_ADS1/ADS-1-practice/m12/Assignment-1/Student.java:9:9: Missing a Javadoc comment. [JavadocVariable]
+[ERROR] /Users/apple/6047_ADS1/ADS-1-practice/m12/Assignment-1/Student.java:10:9: Missing a Javadoc comment. [JavadocVariable]
 [ERROR] /Users/apple/6047_ADS1/ADS-1-practice/m12/Assignment-1/Student.java:11:9: Missing a Javadoc comment. [JavadocVariable]
 [ERROR] /Users/apple/6047_ADS1/ADS-1-practice/m12/Assignment-1/Student.java:12:9: Missing a Javadoc comment. [JavadocVariable]
 [ERROR] /Users/apple/6047_ADS1/ADS-1-practice/m12/Assignment-1/Student.java:13:9: Missing a Javadoc comment. [JavadocVariable]
@@ -19,4 +24,4 @@ Starting audit...
 [ERROR] /Users/apple/6047_ADS1/ADS-1-practice/m12/Assignment-1/Student.java:41:30: Parameter stud should be final. [FinalParameters]
 [ERROR] /Users/apple/6047_ADS1/ADS-1-practice/m12/Assignment-1/Student.java:103:9: Missing a Javadoc comment. [JavadocMethod]
 Audit done.
-Checkstyle ends with 19 errors.
+Checkstyle ends with 24 errors.
