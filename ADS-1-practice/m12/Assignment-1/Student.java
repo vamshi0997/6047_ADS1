@@ -4,10 +4,10 @@
 class Student implements Comparable<Student>{
 	private String studentName;
 	private String dob;
-	String[] ndob = dob.split("-");
-	private int date = Integer.parseInt(ndob[0]);
-	private int month = Integer.parseInt(ndob[1]);
-	private int year = Integer.parseInt(ndob[2]);
+	String[] ndob = null;
+	private int date = 0;
+	private int month = 0;
+	private int year = 0;
 	private int subject1;
 	private int subject2;
 	private int subject3;
@@ -18,6 +18,10 @@ class Student implements Comparable<Student>{
 		final int sub2, final int sub3, final int tot, final String res) {
 		this.studentName = name;
 		this.dob = dob1;
+		this.ndob = dob1.split("-");
+		this.date = Integer.parseInt(ndob[0]);
+		this.month = Integer.parseInt(ndob[1]);
+		this.year = Integer.parseInt(ndob[2]);
 		this.subject1 = sub1;
 		this.subject2 = sub2;
 		this.subject3 = sub3;

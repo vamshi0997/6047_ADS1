@@ -17,11 +17,11 @@ Starting audit...
 [ERROR] /Users/apple/6047_ADS1/ADS-1-practice/m12/Assignment-1/Student.java:15:9: Missing a Javadoc comment. [JavadocVariable]
 [ERROR] /Users/apple/6047_ADS1/ADS-1-practice/m12/Assignment-1/Student.java:17:9: Missing a Javadoc comment. [JavadocMethod]
 [ERROR] /Users/apple/6047_ADS1/ADS-1-practice/m12/Assignment-1/Student.java:18: Line is longer than 80 characters (found 82). [LineLength]
-[ERROR] /Users/apple/6047_ADS1/ADS-1-practice/m12/Assignment-1/Student.java:29:9: Missing a Javadoc comment. [JavadocMethod]
 [ERROR] /Users/apple/6047_ADS1/ADS-1-practice/m12/Assignment-1/Student.java:33:9: Missing a Javadoc comment. [JavadocMethod]
 [ERROR] /Users/apple/6047_ADS1/ADS-1-practice/m12/Assignment-1/Student.java:37:9: Missing a Javadoc comment. [JavadocMethod]
 [ERROR] /Users/apple/6047_ADS1/ADS-1-practice/m12/Assignment-1/Student.java:41:9: Missing a Javadoc comment. [JavadocMethod]
-[ERROR] /Users/apple/6047_ADS1/ADS-1-practice/m12/Assignment-1/Student.java:41:30: Parameter stud should be final. [FinalParameters]
-[ERROR] /Users/apple/6047_ADS1/ADS-1-practice/m12/Assignment-1/Student.java:103:9: Missing a Javadoc comment. [JavadocMethod]
+[ERROR] /Users/apple/6047_ADS1/ADS-1-practice/m12/Assignment-1/Student.java:45:9: Missing a Javadoc comment. [JavadocMethod]
+[ERROR] /Users/apple/6047_ADS1/ADS-1-practice/m12/Assignment-1/Student.java:45:30: Parameter stud should be final. [FinalParameters]
+[ERROR] /Users/apple/6047_ADS1/ADS-1-practice/m12/Assignment-1/Student.java:107:9: Missing a Javadoc comment. [JavadocMethod]
 Audit done.
 Checkstyle ends with 24 errors.
