@@ -24,11 +24,7 @@ class Selection {
 		SeletionSort s1 = new SeletionSort();
 		Student[] stud = s1.sort(nstudent, size);
 		for (int i = 0; i < vacancies; i++) {
-			int count = 0;
-			while (count < unreserved) {
                 s += stud[i].getName()+","+stud[i].getTot()+","+stud[i].getCat() + " \n";
-                count++;
-			}
 			}
 		return s.substring(0, s.length() - 1);
 	}
