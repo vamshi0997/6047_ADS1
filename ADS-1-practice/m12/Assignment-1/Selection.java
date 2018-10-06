@@ -53,7 +53,7 @@ class Selection {
         		}
 			}
 		for (int j = 0; j < size; j++) {
-			if(!str.contains(stud[j].getName()) && count1 < vacancies) {
+			if(!str.contains(stud[j].getName()) && count1 <= vacancies) {
                str += stud[j].getName()+","+stud[j].getTot()+","+stud[j].getCat() + "\n";
                count1++;
 		    }
