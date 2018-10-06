@@ -23,8 +23,12 @@ class Selection {
 		String s = "";
 		SeletionSort s1 = new SeletionSort();
 		Student[] stud = s1.sort(nstudent, size);
-		for (int i = 0; i < vacancies; i++) {
+		for (int i = 0; i < unreserved; i++) {
                 s += stud[i].getName()+","+stud[i].getTot()+","+stud[i].getCat() + " \n";
+			}
+        for (int j = 0; j < vacancies; j++) {
+        	    if(stud[j].getName().equals("ST"))
+                s += stud[j].getName()+","+stud[j].getTot()+","+stud[j].getCat() + " \n";
 			}
 		return s.substring(0, s.length() - 1);
 	}
