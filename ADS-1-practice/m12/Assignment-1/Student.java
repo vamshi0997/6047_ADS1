@@ -4,6 +4,10 @@
 class Student implements Comparable<Student>{
 	private String studentName;
 	private String dob;
+	// String[] ndob = dob.split("-");
+	// private int date = Integer.parseInt(ndob[0]);
+	// private int month = Integer.parseInt(ndob[1]);
+	// private int year = Integer.parseInt(ndob[2]);
 	private int subject1;
 	private int subject2;
 	private int subject3;
@@ -53,7 +57,54 @@ class Student implements Comparable<Student>{
 		if (this.subject2 < stud.subject2) {
 			return -1;
 		}
+		// if (this.year > stud.year) {
+		// 	return 1;
+		// }
+		// if (this.year < stud.year) {
+		// 	return -1;
+		// }
+		// if (this.month > stud.month) {
+		// 	return 1;
+		// }
+		// if (this.month < stud.month) {
+		// 	return -1;
+		// }
+		// if (this.date > stud.date) {
+		// 	return 1;
+		// }
+		// if (this.date < stud.date) {
+		// 	return -1;
+		// }
+
+
 		return 0;
 	}
+
+	// static Comparator<Student> merit = new Comparator<Student>(){
+	// 	public int compare(Student s1, Student s2) {
+	// 		if (s1.total - s2.total != 0) {
+	// 			return s1.total - s2.total;
+	// 		} else if(s1.subject3 -s2.subject3 != 0) {
+ //                return s1.subject3 -s2.subject3;
+	// 		} else if(s1.subject2 -s2.subject2 != 0) {
+	// 			return;
+	// 		}
+	// 	}
+	// };
+
+	// static Comparator<Student> reserve = new Comparator<Student>(){
+	// 	public int compare(Student s1, Student s2) {
+	// 		if (s1.total - s2.total != 0) {
+	// 			return s1.total - s2.total;
+	// 		}
+	// 	}
+	// };
+
+	public String toString() {
+        return this.studentName + ","
+        + this.total + "," + this.reservationcat;
+	}
+
+
 
 }

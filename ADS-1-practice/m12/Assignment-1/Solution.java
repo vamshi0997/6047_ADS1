@@ -26,5 +26,7 @@ public final class Solution {
             sel.add(s);
 		}
 		System.out.println(sel.sort());
+		System.out.println();
+		System.out.println(sel.sort1(vacancies, unreserved, bcvacancies, scvacancies, stvancancies));
 	}
 }
