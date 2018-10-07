@@ -113,7 +113,7 @@ class QuickSort {
      * @return boolean value true or false.
      */
     public boolean less(final Comparable element1, final Comparable element2) {
-        return element1.compareTo(element2) > 0;
+        return element1.compareTo(element2) < 0;
     }
 
     /**
@@ -126,7 +126,7 @@ class QuickSort {
      */
     public String toString(final Comparable[] cmp) {
         String str1 = "[";
-        for (int i = 0; i < cmp.length - 1; i++) {
+        for (int i = 0; i < cmp.length; i++) {
             str1 += cmp[i] + ", ";
         }
         str1 += cmp[cmp.length - 1] + "]";
