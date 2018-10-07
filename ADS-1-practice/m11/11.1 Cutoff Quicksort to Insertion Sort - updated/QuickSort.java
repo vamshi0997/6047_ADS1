@@ -98,7 +98,8 @@ class QuickSort {
      * @param element  The given element.
      * @param minimum minimum element.
      */
-    public void exchange(final Comparable[] cmp, final int element, final int minimum) {
+    public void exchange(final Comparable[] cmp,
+        final int element, final int minimum) {
         Comparable temp = cmp[element];
         cmp[element] = cmp[minimum];
         cmp[minimum] = temp;
