@@ -126,7 +126,7 @@ class QuickSort {
      */
     public String toString(final Comparable[] cmp) {
         String str1 = "[";
-        for (int i = 0; i < cmp.length; i++) {
+        for (int i = 0; i < cmp.length - 1; i++) {
             str1 += cmp[i] + ", ";
         }
         str1 += cmp[cmp.length - 1] + "]";
