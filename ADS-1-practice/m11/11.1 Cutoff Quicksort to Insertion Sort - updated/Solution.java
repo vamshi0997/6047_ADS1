@@ -8,11 +8,11 @@ public final class Solution {
      */
     private Solution() {
     }
-    // /**
-    //  * main method handles the input and output.
-    //  *
-    //  * @param args command line arguments.
-    //  */
+    /**
+     * main method handles the input and output.
+     *
+     * @param args command line arguments.
+     */
     public static void main(final String[] args) {
         Scanner sc = new Scanner(System.in);
         QuickSort sort = new QuickSort();
