@@ -6,7 +6,7 @@ public final class Solution {
     /**
      * default private Constructor for the Solution class.
      */
-    private Solution(){
+    private Solution() {
     }
     // /**
     //  * main method handles the input and output.
@@ -17,11 +17,11 @@ public final class Solution {
         Scanner sc = new Scanner(System.in);
         QuickSort sort = new QuickSort();
         int testcases = Integer.parseInt(sc.nextLine());
-        for(int i = 0; i < testcases; i++) {
+        for (int i = 0; i < testcases; i++) {
             int subarrsize = Integer.parseInt(sc.nextLine());
             String[] line = sc.nextLine().split(" ");
             //String[] tokens = line.split(" ");
-            if(line[0].equals("")) {
+            if (line[0].equals("")) {
                 System.out.println("[]");
             } else {
                 sort.sort(line, subarrsize);
