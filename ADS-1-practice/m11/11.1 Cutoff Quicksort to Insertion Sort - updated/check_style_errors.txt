@@ -1,0 +1,5 @@
+Starting audit...
+[ERROR] /Users/apple/6047_ADS1/ADS-1-practice/m11/11.1 Cutoff Quicksort to Insertion Sort - updated/QuickSort.java:6: Line has trailing spaces. [RegexpSingleline]
+[ERROR] /Users/apple/6047_ADS1/ADS-1-practice/m11/11.1 Cutoff Quicksort to Insertion Sort - updated/QuickSort.java:101: Line is longer than 80 characters (found 88). [LineLength]
+Audit done.
+Checkstyle ends with 2 errors.
