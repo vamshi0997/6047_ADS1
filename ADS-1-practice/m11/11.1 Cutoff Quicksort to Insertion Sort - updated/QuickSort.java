@@ -2,11 +2,6 @@
  * QuickSort class contains methods for the sort.
  */
 class QuickSort {
-    // /**
-    //  * 
-    //  */
-    // QuickSort() {
-    // }
     /**
      * time complexity for this method is O(N^2).
      * sort the given array.
