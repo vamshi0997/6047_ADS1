@@ -228,23 +228,33 @@ class MinPQ<Key> implements Iterable<Key> {
 
 }
 
-
+/**
+ * Solution class contain main method and other static methods.
+ */
 public final class Solution {
+    /**
+     * default constructor.
+     */
     private Solution() {
 
     }
-    public static void main(String[] args) {
+    /**
+     * main method is used to handle input cases.
+     *
+     * @param args command line arguments.
+     */
+    public static void main(final String[] args) {
         Scanner scan = new Scanner(System.in);
         String str = scan.nextLine();
             int testcase = Integer.parseInt(scan.nextLine());
             for (int i = 0; i < testcase; i++) {
                 int flag = 0;
-                if(str.equals("String") || str.equals("Double")) {
+                if (str.equals("String") || str.equals("Double")) {
                     String tmp = scan.nextLine();
                     String[] str1 = tmp.split(",");
 
                     MinPQ<String> m = new MinPQ<String>();
-                    for(String s: str1) {
+                    for (String s: str1) {
                         if (!m.insert(s)) {
                             System.out.println("false");
                             flag = 1;
@@ -254,9 +264,7 @@ public final class Solution {
                     if (flag == 0) {
                         System.out.println(true);
                     }
-                }
-
-                else if (str.equals("Integer")) {
+                } else if (str.equals("Integer")) {
                     String tmp = scan.nextLine();
                     String[] str1 = tmp.split(",");
                     
@@ -271,18 +279,16 @@ public final class Solution {
                     if (flag == 0) {
                         System.out.println(true);
                     }
-                }
-
-                else if (str.equals("Float")) {
+                } else if (str.equals("Float")) {
                     String tmp = scan.nextLine();
-                    if(tmp.length() == 0) {
+                    if (tmp.length() == 0) {
                         System.out.println("false");
                         return;
                     }
                     String[] str1 = tmp.split(",");
                     
                     MinPQ<Float> m = new MinPQ<Float>();
-                    for(String s: str1) {
+                    for (String s: str1) {
                         if (!m.insert(Float.parseFloat(s))) {
                             System.out.println("false");
                             flag = 1;

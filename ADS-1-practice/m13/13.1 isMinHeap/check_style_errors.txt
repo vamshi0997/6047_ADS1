@@ -84,18 +84,8 @@ Starting audit...
 [ERROR] /Users/apple/6047_ADS1/ADS-1-practice/m13/13.1 isMinHeap/Solution.java:221:35: '{' at column 35 should have line break after. [LeftCurly]
 [ERROR] /Users/apple/6047_ADS1/ADS-1-practice/m13/13.1 isMinHeap/Solution.java:223:9: Missing a Javadoc comment. [JavadocMethod]
 [ERROR] /Users/apple/6047_ADS1/ADS-1-practice/m13/13.1 isMinHeap/Solution.java:224: 'if' construct must use '{}'s. [NeedBraces]
-[ERROR] /Users/apple/6047_ADS1/ADS-1-practice/m13/13.1 isMinHeap/Solution.java:232: Missing a Javadoc comment. [JavadocType]
-[ERROR] /Users/apple/6047_ADS1/ADS-1-practice/m13/13.1 isMinHeap/Solution.java:233:5: Missing a Javadoc comment. [JavadocMethod]
-[ERROR] /Users/apple/6047_ADS1/ADS-1-practice/m13/13.1 isMinHeap/Solution.java:236:5: Missing a Javadoc comment. [JavadocMethod]
-[ERROR] /Users/apple/6047_ADS1/ADS-1-practice/m13/13.1 isMinHeap/Solution.java:236:29: Parameter args should be final. [FinalParameters]
-[ERROR] /Users/apple/6047_ADS1/ADS-1-practice/m13/13.1 isMinHeap/Solution.java:242:19: 'if' is not followed by whitespace. [WhitespaceAfter]
-[ERROR] /Users/apple/6047_ADS1/ADS-1-practice/m13/13.1 isMinHeap/Solution.java:247:24: 'for' is not followed by whitespace. [WhitespaceAfter]
-[ERROR] /Users/apple/6047_ADS1/ADS-1-practice/m13/13.1 isMinHeap/Solution.java:257:17: '}' at column 17 should be on the same line as the next part of a multi-block statement (one that directly contains multiple blocks: if/else-if/else, do/while or try/catch/finally). [RightCurly]
-[ERROR] /Users/apple/6047_ADS1/ADS-1-practice/m13/13.1 isMinHeap/Solution.java:262: Line has trailing spaces. [RegexpSingleline]
-[ERROR] /Users/apple/6047_ADS1/ADS-1-practice/m13/13.1 isMinHeap/Solution.java:264:24: 'for' is not followed by whitespace. [WhitespaceAfter]
-[ERROR] /Users/apple/6047_ADS1/ADS-1-practice/m13/13.1 isMinHeap/Solution.java:274:17: '}' at column 17 should be on the same line as the next part of a multi-block statement (one that directly contains multiple blocks: if/else-if/else, do/while or try/catch/finally). [RightCurly]
-[ERROR] /Users/apple/6047_ADS1/ADS-1-practice/m13/13.1 isMinHeap/Solution.java:278:23: 'if' is not followed by whitespace. [WhitespaceAfter]
-[ERROR] /Users/apple/6047_ADS1/ADS-1-practice/m13/13.1 isMinHeap/Solution.java:283: Line has trailing spaces. [RegexpSingleline]
-[ERROR] /Users/apple/6047_ADS1/ADS-1-practice/m13/13.1 isMinHeap/Solution.java:285:24: 'for' is not followed by whitespace. [WhitespaceAfter]
+[ERROR] /Users/apple/6047_ADS1/ADS-1-practice/m13/13.1 isMinHeap/Solution.java:270: Line has trailing spaces. [RegexpSingleline]
+[ERROR] /Users/apple/6047_ADS1/ADS-1-practice/m13/13.1 isMinHeap/Solution.java:272:24: 'for' is not followed by whitespace. [WhitespaceAround]
+[ERROR] /Users/apple/6047_ADS1/ADS-1-practice/m13/13.1 isMinHeap/Solution.java:289: Line has trailing spaces. [RegexpSingleline]
 Audit done.
-Checkstyle ends with 98 errors.
+Checkstyle ends with 88 errors.
