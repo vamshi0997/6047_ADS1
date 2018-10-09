@@ -4,8 +4,17 @@ import java.util.Comparator;
  * @param      <Key>  The key
  */
 public class MaxPQ<Key> {
+    /**
+     *  key variable.
+     */
     private Key[] pq;
+    /**
+     * n variable.
+     */
     private int n;
+    /**
+     * comparator variable.
+     */
     private Comparator<Key> comparator;
 
     /**
@@ -27,21 +36,21 @@ public class MaxPQ<Key> {
      * using the given comparator.
      *
      * @param  initCapacity the initial capacity of this priority queue
-     * @param  comparator the order in which to compare the keys
+     * @param  comparator1 the order in which to compare the keys
      */
     public MaxPQ(final int initCapacity,
-        final Comparator<Key> comparator) {
-        this.comparator = comparator;
+        final Comparator<Key> comparator1) {
+        this.comparator = comparator1;
         pq = (Key[]) new Object[initCapacity + 1];
         n = 0;
     }
     /**
      * Initializes an empty priority queue using the given comparator.
      *
-     * @param  comparator the order in which to compare the keys
+     * @param  comparator1 the order in which to compare the keys
      */
-    public MaxPQ(Comparator<Key> comparator) {
-        this(1, comparator);
+    public MaxPQ(final Comparator<Key> comparator1) {
+        this(1, comparator1);
     }
 
     /**
@@ -53,10 +62,12 @@ public class MaxPQ<Key> {
     public MaxPQ(final Key[] keys) {
         n = keys.length;
         pq = (Key[]) new Object[keys.length + 1];
-        for (int i = 0; i < n; i++)
+        for (int i = 0; i < n; i++) {
             pq[i + 1] = keys[i];
-        for (int k = n / 2; k >= 1; k--)
+        }
+        for (int k = n / 2; k >= 1; k--) {
             sink(k);
+        }
     }
     /**
      * Returns true if this priority queue is empty.
@@ -85,6 +96,9 @@ public class MaxPQ<Key> {
         return pq[1];
     }
     // helper function to double the size of the heap array
+    /**
+     * @param capacity value.
+     */
     private void resize(final int capacity) {
         Key[] temp = (Key[]) new Object[capacity];
         for (int i = 1; i <= n; i++) {
@@ -98,7 +112,9 @@ public class MaxPQ<Key> {
      */
     public void insert(final Key x) {
         // double size of array if necessary
-        if (n == pq.length - 1) resize(2 * pq.length);
+        if (n == pq.length - 1) {
+            resize(2 * pq.length);
+        }
         pq[++n] = x;
         swim(n);
     }
@@ -113,8 +129,10 @@ public class MaxPQ<Key> {
         Key max = pq[1];
         exch(1, n--);
         sink(1);
-        pq[n + 1] = null;   // to avoid loiterig and help with garbage collection
-        if ((n > 0) && (n == (pq.length - 1) / 4)) resize(pq.length / 2);
+        pq[n + 1] = null;
+        if ((n > 0) && (n == (pq.length - 1) / 2 + 2)) {
+            resize(pq.length / 2);
+        }
         return max;
     }
     /**
@@ -136,8 +154,12 @@ public class MaxPQ<Key> {
         int k1 = k;
         while (2 * k1 <= n) {
             int j = 2 * k1;
-            if (j < n && less(j, j + 1)) j++;
-            if (!less(k1, j)) break;
+            if (j < n && less(j, j + 1)) {
+                j++;
+            }
+            if (!less(k1, j)) {
+                break;
+            }
             exch(k1, j);
             k1 = j;
         }
@@ -178,11 +200,17 @@ public class MaxPQ<Key> {
      * @return     True if maximum heap, False otherwise.
      */
     private boolean isMaxHeap(final int k) {
-        if (k > n) return true;
+        if (k > n) {
+            return true;
+        }
         int left = 2 * k;
         int right = 2 * k + 1;
-        if (left  <= n && less(k, left))  return false;
-        if (right <= n && less(k, right)) return false;
+        if (left  <= n && less(k, left))  {
+            return false;
+        }
+        if (right <= n && less(k, right)) {
+            return false;
+        }
         return isMaxHeap(left) && isMaxHeap(right);
     }
 }

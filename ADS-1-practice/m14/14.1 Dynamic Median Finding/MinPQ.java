@@ -43,10 +43,10 @@ public class MinPQ<Key> {
     }
     /**
      * Initializes an empty priority queue using the given comparator.
-     * @param  comparator the order in which to compare the keys
+     * @param  comparator1 the order in which to compare the keys
      */
-    public MinPQ(final Comparator<Key> comparator) {
-        this(1, comparator);
+    public MinPQ(final Comparator<Key> comparator1) {
+        this(1, comparator1);
     }
     /**
      * Initializes a priority queue from the array of keys.
