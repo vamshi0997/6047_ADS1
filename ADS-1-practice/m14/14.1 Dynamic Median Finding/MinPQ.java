@@ -34,10 +34,10 @@ public class MinPQ<Key> {
      * Initializes an empty priority queue with the given initial capacity,
      * using the given comparator.
      * @param  initCapacity the initial capacity of this priority queue
-     * @param  comparator the order in which to compare the keys
+     * @param  comparator1 the order in which to compare the keys
      */
-    public MinPQ(final int initCapacity, final Comparator<Key> comparator) {
-        this.comparator = comparator;
+    public MinPQ(final int initCapacity, final Comparator<Key> comparator1) {
+        this.comparator = comparator1;
         pq = (Key[]) new Object[initCapacity + 1];
         n = 0;
     }
@@ -50,16 +50,19 @@ public class MinPQ<Key> {
     }
     /**
      * Initializes a priority queue from the array of keys.
-     * Takes time proportional to the number of keys, using sink-based heap construction.
+     * Takes time proportional to the number of keys,
+     * using sink-based heap construction.
      * @param  keys the array of keys
      */
     public MinPQ(final Key[] keys) {
         n = keys.length;
         pq = (Key[]) new Object[keys.length + 1];
-        for (int i = 0; i < n; i++)
+        for (int i = 0; i < n; i++) {
             pq[i + 1] = keys[i];
-        for (int k = n / 2; k >= 1; k--)
+        }
+        for (int k = n / 2; k >= 1; k--) {
             sink(k);
+        }
     }
     /**
      * Returns true if this priority queue is empty.
@@ -103,7 +106,9 @@ public class MinPQ<Key> {
      * @param  x the key to add to this priority queue
      */
     public void insert(final Key x) {
-        if (n == pq.length - 1) resize(2 * pq.length);
+        if (n == pq.length - 1) {
+            resize(2 * pq.length);
+        }
         pq[++n] = x;
         swim(n);
     }
@@ -119,7 +124,9 @@ public class MinPQ<Key> {
         exch(1, n--);
         sink(1);
         pq[n + 1] = null;
-        if ((n > 0) && (n == (pq.length - 1) / 4)) resize(pq.length / 2);
+        if ((n > 0) && (n == (pq.length - 1) / 2 + 2)) {
+            resize(pq.length / 2);
+        }
         return min;
     }
     /**
@@ -141,8 +148,12 @@ public class MinPQ<Key> {
         int k1 = k;
         while (2 * k1 <= n) {
             int j = 2 * k1;
-            if (j < n && greater(j, j + 1)) j++;
-            if (!greater(k1, j)) break;
+            if (j < n && greater(j, j + 1)) {
+                j++;
+            }
+            if (!greater(k1, j)) {
+                break;
+            }
             exch(k1, j);
             k1 = j;
         }
@@ -183,11 +194,17 @@ public class MinPQ<Key> {
      * @return     True if minimum heap, False otherwise.
      */
     private boolean isMinHeap(final int k) {
-        if (k > n) return true;
+        if (k > n) {
+            return true;
+        }
         int left = 2 * k;
         int right = 2 * k + 1;
-        if (left  <= n && greater(k, left))  return false;
-        if (right <= n && greater(k, right)) return false;
+        if (left  <= n && greater(k, left))  {
+            return false;
+        }
+        if (right <= n && greater(k, right)) {
+            return false;
+        }
         return isMinHeap(left) && isMinHeap(right);
     }
 }
