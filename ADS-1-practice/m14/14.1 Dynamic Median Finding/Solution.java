@@ -29,14 +29,14 @@ public final class Solution {
             } else {
                 dynamic.insertAtMin(arrinput);
             }
-            if (dynamic.getMinSize() - dynamic.getMaxSize() < 1) {
+            if (dynamic.getMinSize() - dynamic.getMaxSize() > 1) {
                 dynamic.insertAtMax(dynamic.delMin());
             }
             if (dynamic.getMaxSize() - dynamic.getMinSize()  > 1) {
                 dynamic.insertAtMin(dynamic.delMax());
             }
             if (Math.abs(
-                        dynamic.getMinSize() - dynamic.getMaxSize()) == 1) {
+                        dynamic.getMinSize() - dynamic.getMaxSize()) >= 1) {
                 if (dynamic.getMinSize() > dynamic.getMaxSize()) {
                     median = dynamic.getMin();
                     System.out.println(median);
