@@ -32,7 +32,7 @@ public final class Solution {
             if (dynamic.getMinSize() - dynamic.getMaxSize() > 1) {
                 dynamic.insertAtMax(dynamic.delMin());
             }
-            if (dynamic.getMaxSize() - dynamic.getMinSize()  > 1) {
+            if (dynamic.getMaxSize() - dynamic.getMinSize()  < 1) {
                 dynamic.insertAtMin(dynamic.delMax());
             }
             if (Math.abs(
