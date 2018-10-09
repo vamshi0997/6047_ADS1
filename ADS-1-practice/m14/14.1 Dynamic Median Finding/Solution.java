@@ -36,7 +36,7 @@ public final class Solution {
                 dynamic.insertAtMin(dynamic.delMax());
             }
             if (Math.abs(
-                        dynamic.getMinSize() - dynamic.getMaxSize()) >= 1) {
+                        dynamic.getMinSize() - dynamic.getMaxSize()) == 1) {
                 if (dynamic.getMinSize() > dynamic.getMaxSize()) {
                     median = dynamic.getMin();
                     System.out.println(median);
