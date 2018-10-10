@@ -13,7 +13,7 @@ public final class Solution {
      * main method is used to handle input and acessing other classes.
      * Here we access the binarysearch symbol table.
      *
-     * @param String command line arguments.
+     * @param args command line arguments.
      */
     public static void main(final String[] args) {
         Scanner scan = new Scanner(System.in);
@@ -23,9 +23,9 @@ public final class Solution {
         for (int i = 0; i < array.length; i++) {
             bs.put(array[i], i);
         }
-        while(scan.hasNext()) {
+        while (scan.hasNext()) {
             String[] input = scan.nextLine().split(" ");
-            switch(input[0]) {
+            switch (input[0]) {
                 case "max":
                 System.out.println(bs.max());
                 break;
@@ -48,6 +48,8 @@ public final class Solution {
                 break;
                 case "get":
                 System.out.println(bs.get(input[1]));
+                break;
+                default:
                 break;
             }
         }

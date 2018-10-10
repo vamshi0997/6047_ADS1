@@ -17,7 +17,7 @@ public class Queue<Item> implements Iterable<Item> {
      */
     private int n;
     /**
-     * Class node contains item and next 
+     * Class node contains item and next.
      * @param <Item> item Node.
      */
     private static class Node<Item> {
@@ -40,7 +40,7 @@ public class Queue<Item> implements Iterable<Item> {
     }
     /**
      * Returns true if this queue is empty.
-     * @return {@code true} if this queue is empty; {@code false} otherwise
+     * @return {@code true} if this queue is empty;{@code false} otherwise
      */
     public boolean isEmpty() {
         return first == null;
