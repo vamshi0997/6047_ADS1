@@ -13,7 +13,7 @@ public final class Solution {
      * main method is used to handle input and acessing other classes.
      * Here we access the binarysearch symbol table.
      *
-     * @param args command line arguments.
+     * @param command line arguments.
      */
     public static void main(final String[] args) {
         Scanner scan = new Scanner(System.in);
@@ -43,7 +43,7 @@ public final class Solution {
                 break;
                 case "keys":
                 for (String s: bs.keys()) {
-                    System.out.println(s);
+                    System.out.println(s + " " + bs.get(s));
                 }
                 break;
                 case "get":
