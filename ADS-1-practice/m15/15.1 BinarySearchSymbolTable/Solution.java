@@ -13,7 +13,7 @@ public final class Solution {
      * main method is used to handle input and acessing other classes.
      * Here we access the binarysearch symbol table.
      *
-     * @param command line arguments.
+     * @param args line arguments.
      */
     public static void main(final String[] args) {
         Scanner scan = new Scanner(System.in);
