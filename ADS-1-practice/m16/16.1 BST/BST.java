@@ -44,8 +44,12 @@ public class BST<Key extends Comparable<Key>, Value> {
 
     // return number of key-value pairs in BST rooted at x
     private int size(Node x) {
-        if (x == null) return 0;
-        else return x.size;
+        if (x == null) {
+            return 0;
+        }
+        else {
+            return x.size;
+        }
     }
 
     /**
@@ -61,12 +65,22 @@ public class BST<Key extends Comparable<Key>, Value> {
     }
 
     private Value get(Node x, Key key) {
-        if (key == null) throw new IllegalArgumentException("calls get() with a null key");
-        if (x == null) return null;
+        if (key == null) {
+            throw new IllegalArgumentException("calls get() with a null key");
+        }
+        if (x == null) {
+            return null;
+        }
         int cmp = key.compareTo(x.key);
-        if      (cmp < 0) return get(x.left, key);
-        else if (cmp > 0) return get(x.right, key);
-        else              return x.val;
+        if (cmp < 0) {
+            return get(x.left, key);
+        }
+        else if (cmp > 0) {
+            return get(x.right, key);
+        }
+        else {
+            return x.val;
+        }
     }
 
     /**
@@ -80,7 +94,9 @@ public class BST<Key extends Comparable<Key>, Value> {
      * @throws IllegalArgumentException if {@code key} is {@code null}
      */
     public void put(Key key, Value val) {
-        if (key == null) throw new IllegalArgumentException("calls put() with a null key");
+        if (key == null) {
+            throw new IllegalArgumentException("calls put() with a null key");
+        }
         root = put(root, key, val);
     }
 
