@@ -1,27 +1,59 @@
+/**
+ * Book class contain book name, author, price.
+ */
 class Book implements Comparable<Book> {
-	String name;
-	String author;
-	float price;
-	Book(String name1, String author1, float price1) {
-	this.name = name1;
-	this.author = author1;
-	this.price = price1;
-	}
-
-	String getName() {
-		return this.name;
-	}
-
-	String getAuthor() {
-		return this.author;
-	}
-
-	float getPrice() {
-		return this.price;
-	}
-	public int compareTo(Book that) {
-		return this.getName().compareTo(that.getName());
-	}
-
-
+    /**
+     * name of book.
+     */
+    private String name;
+    /**
+     * author name of book.
+     */
+    private String author;
+    /**
+     * price of the book.
+     */
+    private float price;
+    /**
+     * Book class constructor.
+     *
+     * @param name1 name.
+     * @param author1 author.
+     * @param price1 price.
+     */
+    Book(final String name1, final String author1, final float price1) {
+    this.name = name1;
+    this.author = author1;
+    this.price = price1;
+    }
+    /**
+     * get name method return name of book.
+     * @return name of book.
+     */
+    String getName() {
+        return this.name;
+    }
+    /**
+     * get author method return name of book author.
+     * @return name of book author..
+     */
+    String getAuthor() {
+        return this.author;
+    }
+    /**
+     * get price method return price of book.
+     * @return price of book.
+     */
+    float getPrice() {
+        return this.price;
+    }
+    /**
+     * compares the two differnt book names.
+     *
+     * @param that book object.
+     * @return integer value.
+     */
+    public int compareTo(final Book that) {
+        return this.getName().compareTo(that.getName());
+    }
 }

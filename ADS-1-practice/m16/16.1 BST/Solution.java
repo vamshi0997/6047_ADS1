@@ -20,13 +20,13 @@ public final class Solution {
         while (scan.hasNext()) {
             String[] input = scan.nextLine().split(",");
             Book bk = new Book(
-                input[1], input[2], Float.parseFloat(input[3]));
+                input[1], input[2], Float.parseFloat(input[2 + 1]));
             switch (input[0]) {
                 case "put":
-                bst.put(bk, Integer.parseInt(input[4]));
+                bst.put(bk, Integer.parseInt(input[2 + 2]));
                 break;
                 case "get":
-                System.out.println( bst.get(bk));
+                System.out.println(bst.get(bk));
                 break;
                 default:
                 break;
