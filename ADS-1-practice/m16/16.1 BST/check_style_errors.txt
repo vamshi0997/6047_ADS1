@@ -40,13 +40,11 @@ Starting audit...
 [ERROR] /Users/apple/6047_ADS1/ADS-1-practice/m16/16.1 BST/BST.java:82:30: Parameter val should be final. [FinalParameters]
 [ERROR] /Users/apple/6047_ADS1/ADS-1-practice/m16/16.1 BST/BST.java:83: 'if' construct must use '{}'s. [NeedBraces]
 [ERROR] /Users/apple/6047_ADS1/ADS-1-practice/m16/16.1 BST/BST.java:83: Line is longer than 80 characters (found 91). [LineLength]
-[ERROR] /Users/apple/6047_ADS1/ADS-1-practice/m16/16.1 BST/BST.java:92:5: Missing a Javadoc comment. [JavadocMethod]
-[ERROR] /Users/apple/6047_ADS1/ADS-1-practice/m16/16.1 BST/BST.java:92:22: Parameter x should be final. [FinalParameters]
-[ERROR] /Users/apple/6047_ADS1/ADS-1-practice/m16/16.1 BST/BST.java:92:30: Parameter key should be final. [FinalParameters]
-[ERROR] /Users/apple/6047_ADS1/ADS-1-practice/m16/16.1 BST/BST.java:92:39: Parameter val should be final. [FinalParameters]
-[ERROR] /Users/apple/6047_ADS1/ADS-1-practice/m16/16.1 BST/BST.java:93: 'if' construct must use '{}'s. [NeedBraces]
-[ERROR] /Users/apple/6047_ADS1/ADS-1-practice/m16/16.1 BST/BST.java:95: 'if' construct must use '{}'s. [NeedBraces]
-[ERROR] /Users/apple/6047_ADS1/ADS-1-practice/m16/16.1 BST/BST.java:96: 'if' construct must use '{}'s. [NeedBraces]
-[ERROR] /Users/apple/6047_ADS1/ADS-1-practice/m16/16.1 BST/BST.java:97: 'else' construct must use '{}'s. [NeedBraces]
+[ERROR] /Users/apple/6047_ADS1/ADS-1-practice/m16/16.1 BST/BST.java:87:5: Missing a Javadoc comment. [JavadocMethod]
+[ERROR] /Users/apple/6047_ADS1/ADS-1-practice/m16/16.1 BST/BST.java:87:22: Parameter x should be final. [FinalParameters]
+[ERROR] /Users/apple/6047_ADS1/ADS-1-practice/m16/16.1 BST/BST.java:87:30: Parameter key should be final. [FinalParameters]
+[ERROR] /Users/apple/6047_ADS1/ADS-1-practice/m16/16.1 BST/BST.java:87:39: Parameter val should be final. [FinalParameters]
+[ERROR] /Users/apple/6047_ADS1/ADS-1-practice/m16/16.1 BST/BST.java:94:9: '}' at column 9 should be on the same line as the next part of a multi-block statement (one that directly contains multiple blocks: if/else-if/else, do/while or try/catch/finally). [RightCurly]
+[ERROR] /Users/apple/6047_ADS1/ADS-1-practice/m16/16.1 BST/BST.java:97:9: '}' at column 9 should be on the same line as the next part of a multi-block statement (one that directly contains multiple blocks: if/else-if/else, do/while or try/catch/finally). [RightCurly]
 Audit done.
-Checkstyle ends with 49 errors.
+Checkstyle ends with 47 errors.

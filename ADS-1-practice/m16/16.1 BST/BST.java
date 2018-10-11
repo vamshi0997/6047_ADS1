@@ -81,20 +81,23 @@ public class BST<Key extends Comparable<Key>, Value> {
      */
     public void put(Key key, Value val) {
         if (key == null) throw new IllegalArgumentException("calls put() with a null key");
-        // if (val == null) {
-        //     delete(key);
-        //     return;
-        // }
         root = put(root, key, val);
-        //assert check();
     }
 
     private Node put(Node x, Key key, Value val) {
-        if (x == null) return new Node(key, val, 1);
+        if (x == null) {
+            return new Node(key, val, 1);
+        }
         int cmp = key.compareTo(x.key);
-        if      (cmp < 0) x.left  = put(x.left,  key, val);
-        else if (cmp > 0) x.right = put(x.right, key, val);
-        else              x.val   = val;
+        if (cmp < 0) {
+            x.left  = put(x.left,  key, val);
+        }
+        else if (cmp > 0) {
+            x.right = put(x.right, key, val);
+        }
+        else {
+            x.val   = val;
+        }
         x.size = 1 + size(x.left) + size(x.right);
         return x;
     }
