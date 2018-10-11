@@ -1,8 +1,19 @@
 import java.util.Scanner;
+/**
+ * Solution class contain main method.
+ */
 public final class Solution {
+	/**
+	 * private default constructor.
+	 */
 	private Solution() {
 
 	}
+	/**
+	 * main method is used to handle input and other output.
+	 *
+	 * @param args command line arguments.
+	 */
 	public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         BST<Book, Integer> bst = new BST<Book, Integer>();
@@ -14,7 +25,6 @@ public final class Solution {
                 bst.put(b, Integer.parseInt(input[4]));
                 break;
                 case "get":
-                //Book b1 = new Book(input[1], input[2], Float.parseFloat(input[3]));
                 System.out.println( bst.get(b));
                 break;
         	}
