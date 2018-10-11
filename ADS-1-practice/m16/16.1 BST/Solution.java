@@ -14,13 +14,14 @@ public final class Solution {
      *
      * @param args command line arguments.
      */
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
         Scanner scan = new Scanner(System.in);
         BST<Book, Integer> bst = new BST<Book, Integer>();
         while (scan.hasNext()) {
             String[] input = scan.nextLine().split(",");
-            Book bk = new Book(input[1], input[2], Float.parseFloat(input[3]));
-            switch(input[0]) {
+            Book bk = new Book(
+                input[1], input[2], Float.parseFloat(input[3]));
+            switch (input[0]) {
                 case "put":
                 bst.put(bk, Integer.parseInt(input[4]));
                 break;
