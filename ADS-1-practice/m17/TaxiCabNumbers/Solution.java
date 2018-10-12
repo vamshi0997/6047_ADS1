@@ -51,24 +51,24 @@ public class Solution implements Comparable<Solution> {
      * @param args command line arguments.
      */
     public static void main(final String[] args) {
-        int n = 600, temp = -1, count = 0;
+        int number = 600, temp = -1, count = 0;
         Scanner scan = new Scanner(System.in);
         int N = scan.nextInt();
-        int M = scan.nextInt();
+        int Mpairs = scan.nextInt();
 
         MinPQ<Solution> pq = new MinPQ<Solution>();
-        for (int i = 0; i <= n; i++) {
+        for (int i = 0; i <= number; i++) {
             pq.insert(new Solution(i, i));
         }
 
         // find smallest sum, print it out, and update
         while (!pq.isEmpty()) {
-            Solution s = pq.delMin();
-            if (temp == s.sum) {
-                if (++count == M - 1) {
+            Solution cubesum = pq.delMin();
+            if (temp == cubesum.sum) {
+                if (++count == Mpairs - 1) {
                     N--;
                     if (N == 0) {
-                        System.out.println(s.sum);
+                        System.out.println(cubesum.sum);
                         break;
                     }
                 }
@@ -76,9 +76,9 @@ public class Solution implements Comparable<Solution> {
                 count = 0;
             }
 
-            temp = s.sum;
-            if (s.second < n)
-                pq.insert(new Solution(s.first, s.second + 1));
+            temp = cubesum.sum;
+            if (cubesum.second < number)
+                pq.insert(new Solution(cubesum.first, cubesum.second + 1));
         }
     }
 }
