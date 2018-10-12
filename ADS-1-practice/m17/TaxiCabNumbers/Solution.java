@@ -35,20 +35,16 @@ public class Solution implements Comparable<Solution> {
         while (!pq.isEmpty()) {
             Solution s = pq.delMin();
             if (temp == s.sum) {
-            //     count++;
-            // } else {
-            //     count = 0;
-            // }
-            if (++count == M - 1) {
-                N--;
-                if (N == 0) {
-                    System.out.println(s.sum);
-                    break;
+                if (++count == M - 1) {
+                    N--;
+                    if (N == 0) {
+                        System.out.println(s.sum);
+                        break;
+                    }
                 }
+            } else {
+                count = 0;
             }
-        } else {
-            count = 0;
-        }
 
             temp = s.sum;
             if (s.j < n)
