@@ -1,6 +1,6 @@
 import java.util.Scanner;
 /**
- * Solution class contain main method and
+ * Solution class contain main method and.
  * other methods such as compareTo etc..,
  */
 public class Solution implements Comparable<Solution> {
@@ -22,7 +22,7 @@ public class Solution implements Comparable<Solution> {
      * @param first1 The first
      * @param second1 The second.
      */
-    public Solution(int first1, int second1) {
+    public Solution(final int first1, final int second1) {
         this.sum = first1 * first1 * first1 + second1 * second1 * second1;
         this.first = first1;
         this.second = second1;
@@ -33,15 +33,19 @@ public class Solution implements Comparable<Solution> {
      * @param that That object.
      * @return integer.
      */
-    public int compareTo(Solution that) {
-        if (this.sum < that.sum) return -1;
-        if (this.sum > that.sum) return +1;
+    public int compareTo(final Solution that) {
+        if (this.sum < that.sum) {
+            return -1;
+        }
+        if (this.sum > that.sum) {
+            return +1;
+        }
         return 0;
     }
     /**
      * Print the value in required string format.
      * @return String.
-     */ 
+     */
     public String toString() {
         return sum + " = " + first + "^3" + " + " + second + "^3";
     }
@@ -51,10 +55,11 @@ public class Solution implements Comparable<Solution> {
      * @param args command line arguments.
      */
     public static void main(final String[] args) {
-        int number = 600, temp = -1, count = 0;
+        final int sixhun = 600;
+        int number = sixhun, temp = -1, count = 0;
         Scanner scan = new Scanner(System.in);
-        int Nthelement = scan.nextInt();
-        int Mpairs = scan.nextInt();
+        int nthelement = scan.nextInt();
+        int mpairs = scan.nextInt();
 
         MinPQ<Solution> pq = new MinPQ<Solution>();
         for (int i = 0; i <= number; i++) {
@@ -65,9 +70,9 @@ public class Solution implements Comparable<Solution> {
         while (!pq.isEmpty()) {
             Solution cubesum = pq.delMin();
             if (temp == cubesum.sum) {
-                if (++count == Mpairs - 1) {
-                    Nthelement --;
-                    if (Nthelement == 0) {
+                if (++count == mpairs - 1) {
+                    nthelement--;
+                    if (nthelement == 0) {
                         System.out.println(cubesum.sum);
                         break;
                     }
@@ -77,8 +82,9 @@ public class Solution implements Comparable<Solution> {
             }
 
             temp = cubesum.sum;
-            if (cubesum.second < number)
+            if (cubesum.second < number) {
                 pq.insert(new Solution(cubesum.first, cubesum.second + 1));
+            }
         }
     }
 }
