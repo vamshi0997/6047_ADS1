@@ -53,7 +53,7 @@ public class Solution implements Comparable<Solution> {
     public static void main(final String[] args) {
         int number = 600, temp = -1, count = 0;
         Scanner scan = new Scanner(System.in);
-        int N = scan.nextInt();
+        int Nthelement = scan.nextInt();
         int Mpairs = scan.nextInt();
 
         MinPQ<Solution> pq = new MinPQ<Solution>();
@@ -66,8 +66,8 @@ public class Solution implements Comparable<Solution> {
             Solution cubesum = pq.delMin();
             if (temp == cubesum.sum) {
                 if (++count == Mpairs - 1) {
-                    N--;
-                    if (N == 0) {
+                    Nthelement --;
+                    if (Nthelement == 0) {
                         System.out.println(cubesum.sum);
                         break;
                     }
