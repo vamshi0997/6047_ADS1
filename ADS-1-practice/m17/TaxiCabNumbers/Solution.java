@@ -46,6 +46,8 @@ public class Solution implements Comparable<Solution> {
                     break;
                 }
             }
+        } else {
+            count = 0;
         }
 
             temp = s.sum;
