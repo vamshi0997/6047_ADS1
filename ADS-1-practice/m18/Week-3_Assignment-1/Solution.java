@@ -19,19 +19,20 @@ public final class Solution {
         int nStocks = Integer.parseInt(scan.nextLine());
         for (int i = 0; i < 6; i++) {
         	MinPQ<Stock> min = new MinPQ<Stock>();
-        	//MaxPQ<String> max = new MaxPQ<String>();
+        	MaxPQ<Stock> max = new MaxPQ<Stock>();
             for(int j = 0; j < nStocks; j++) {
         	    String[] input = scan.nextLine().split(",");
         	    Stock s = new Stock(input[0], Double.parseDouble(input[1]));
         	    min.insert(s);
-        	    //max.insert(s);
+        	    max.insert(s);
             }
             for(int k = 0; k < 5; k++) {
-            	System.out.println(min.delMin().getName());
+            	System.out.println(min.delMin().tostr());
             }
-            // for(int l = 0; l < 5; l++) {
-            // 	System.out.println(delMax());
-            // }
+            System.out.println();
+            for(int l = 0; l < 5; l++) {
+            	System.out.println(max.delMax().tostr());
+            }
 
         }
 

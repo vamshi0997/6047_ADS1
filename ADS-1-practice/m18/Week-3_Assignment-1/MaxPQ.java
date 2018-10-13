@@ -1,4 +1,4 @@
-package edu.princeton.cs.algs4;
+//package edu.princeton.cs.algs4;
 
 import java.util.Comparator;
 import java.util.Iterator;
@@ -257,19 +257,19 @@ public class MaxPQ<Key> implements Iterable<Key> {
         }
     }
 
-    /**
-     * Unit tests the {@code MaxPQ} data type.
-     *
-     * @param args the command-line arguments
-     */
-    public static void main(String[] args) {
-        MaxPQ<String> pq = new MaxPQ<String>();
-        while (!StdIn.isEmpty()) {
-            String item = StdIn.readString();
-            if (!item.equals("-")) pq.insert(item);
-            else if (!pq.isEmpty()) StdOut.print(pq.delMax() + " ");
-        }
-        StdOut.println("(" + pq.size() + " left on pq)");
-    }
+    // /**
+    //  * Unit tests the {@code MaxPQ} data type.
+    //  *
+    //  * @param args the command-line arguments
+    //  */
+    // public static void main(String[] args) {
+    //     MaxPQ<String> pq = new MaxPQ<String>();
+    //     while (!StdIn.isEmpty()) {
+    //         String item = StdIn.readString();
+    //         if (!item.equals("-")) pq.insert(item);
+    //         else if (!pq.isEmpty()) StdOut.print(pq.delMax() + " ");
+    //     }
+    //     StdOut.println("(" + pq.size() + " left on pq)");
+    // }
 
 }

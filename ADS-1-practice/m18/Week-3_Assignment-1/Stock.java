@@ -11,6 +11,10 @@ class Stock implements Comparable<Stock> {
 	Double getchange() {
 		return this.change;
 	}
+
+	String tostr() {
+		return this.name + " " + this.change;
+	}
 	
 	public int compareTo(Stock that) {
         if(this.change > that.change) {
