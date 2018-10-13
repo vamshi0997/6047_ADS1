@@ -38,7 +38,7 @@ public final class Solution {
             System.out.println();
         }
         int input = Integer.parseInt(scan.nextLine());
-        for(int a = 0; a < 6; a++) {
+        for(int a = 0; a < input; a++) {
         	String[] bstinp = scan.nextLine().split(",");
         	if(bstinp[0].equals("get")) {
 
