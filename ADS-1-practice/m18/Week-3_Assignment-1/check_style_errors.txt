@@ -13,8 +13,8 @@ Starting audit...
 [ERROR] /Users/apple/6047_ADS1/ADS-1-practice/m18/Week-3_Assignment-1/Stock.java:18: Line has trailing spaces. [RegexpSingleline]
 [ERROR] /Users/apple/6047_ADS1/ADS-1-practice/m18/Week-3_Assignment-1/Stock.java:19:9: Missing a Javadoc comment. [JavadocMethod]
 [ERROR] /Users/apple/6047_ADS1/ADS-1-practice/m18/Week-3_Assignment-1/Stock.java:19:30: Parameter that should be final. [FinalParameters]
-[ERROR] /Users/apple/6047_ADS1/ADS-1-practice/m18/Week-3_Assignment-1/Stock.java:20:11: 'if' is not followed by whitespace. [WhitespaceAfter]
-[ERROR] /Users/apple/6047_ADS1/ADS-1-practice/m18/Week-3_Assignment-1/Stock.java:23:11: 'if' is not followed by whitespace. [WhitespaceAfter]
+[ERROR] /Users/apple/6047_ADS1/ADS-1-practice/m18/Week-3_Assignment-1/Stock.java:20:11: 'if' is not followed by whitespace. [WhitespaceAround]
+[ERROR] /Users/apple/6047_ADS1/ADS-1-practice/m18/Week-3_Assignment-1/Stock.java:23:11: 'if' is not followed by whitespace. [WhitespaceAround]
 [ERROR] /Users/apple/6047_ADS1/ADS-1-practice/m18/Week-3_Assignment-1/Stock.java:23:12: '(' is followed by whitespace. [ParenPad]
 Audit done.
 Checkstyle ends with 17 errors.

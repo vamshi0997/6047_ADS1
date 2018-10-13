@@ -33,7 +33,7 @@ public final class Solution {
             for(int l = 0; l < 5; l++) {
             	System.out.println(max.delMax().tostr());
             }
-
+            System.out.println();
         }
 
 	}
