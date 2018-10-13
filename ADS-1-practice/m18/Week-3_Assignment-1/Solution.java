@@ -17,6 +17,7 @@ public final class Solution {
 	public static void main(final String[] args) {
         Scanner scan = new Scanner(System.in);
         int nStocks = Integer.parseInt(scan.nextLine());
+        BinarySearchST<Stock, Integer> bsst = new BinarySearchST<Stock, Integer>();
         for (int i = 0; i < 6; i++) {
         	MinPQ<Stock> min = new MinPQ<Stock>();
         	MaxPQ<Stock> max = new MaxPQ<Stock>();
@@ -27,7 +28,8 @@ public final class Solution {
         	    max.insert(s);
             }
             for(int k = 0; k < 5; k++) {
-            	System.out.println(min.delMin().tostr());
+            	String str = min.delMin().tostr();
+            	System.out.println(str);
             }
             System.out.println();
             for(int l = 0; l < 5; l++) {
@@ -35,6 +37,14 @@ public final class Solution {
             }
             System.out.println();
         }
+        int input = Integer.parseInt(scan.nextLine());
+        for(int a = 0; a < 6; a++) {
+        	String[] bstinp = scan.nextLine().split(",");
+        	if(bstinp[0].equals("get")) {
+
+        	}
+        }
+
 
 	}
 }
