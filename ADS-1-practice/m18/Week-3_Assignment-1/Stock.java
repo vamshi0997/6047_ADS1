@@ -8,7 +8,7 @@ class Stock implements Comparable<Stock> {
 	String getName() {
 		return this.name;
 	}
-	Double getchange() {
+	Double getChange() {
 		return this.change;
 	}
 
@@ -18,15 +18,19 @@ class Stock implements Comparable<Stock> {
 	
 	public int compareTo(Stock that) {
         if(this.change > that.change) {
-        	return -1;
-        }
-        else if( this.change < that.change) {
         	return 1;
         }
-        else {
-        	//System.out.println("hi " + that.getName().compareTo(this.getName()));
-            return that.getName().compareTo(this.getName());
+        else if( this.change < that.change) {
+        	return -1;
         }
-        //return 0;
+        int a = that.getName().compareTo(this.getName());
+        if (a > 0) {
+        	return -1;
+        } else {
+        	return 1;
+        }
+        // else {
+        //     return that.getName().compareTo(this.getName());
+        // }
 	}
 }
