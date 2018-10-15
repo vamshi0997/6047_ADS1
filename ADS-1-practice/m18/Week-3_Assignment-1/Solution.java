@@ -13,15 +13,17 @@ public final class Solution {
 	/**
 	 * main method is used to handle the inputs.
 	 *
-	 * @param      args  The command line arguments
+	 * @param args  The command line arguments
 	 */
 	public static void main(final String[] args) {
         Scanner scan = new Scanner(System.in);
         //int freq = 1, freq1 = 1;;
         int nStocks = Integer.parseInt(scan.nextLine());
         String str2 = "";
-        BinarySearchST<String, Integer> minST = new BinarySearchST<String, Integer>(nStocks);
-        BinarySearchST<String, Integer> maxST = new BinarySearchST<String, Integer>(nStocks);
+        BinarySearchST<String, Integer> minST
+        = new BinarySearchST<String, Integer>(nStocks);
+        BinarySearchST<String, Integer> maxST
+        = new BinarySearchST<String, Integer>(nStocks);
         for (int i = 0; i < 6; i++) {
         	MinPQ<Stock> min = new MinPQ<Stock>();
         	MaxPQ<Stock> max = new MaxPQ<Stock>();
@@ -33,9 +35,8 @@ public final class Solution {
             }
             for (int l = 0; l < 5; l++) {
             	Stock str = max.delMax();
-            	//String[] str1 = str.split(" ");
             	Integer freq = maxST.get(str.getName());
-            	if(freq != null) {
+            	if (freq != null) {
             		maxST.put(str.getName(), freq + 1);
             	} else {
             		maxST.put(str.getName(), 1);
@@ -45,9 +46,8 @@ public final class Solution {
             System.out.println();
             for (int k = 0; k < 5; k++) {
             	Stock str = min.delMin();
-            	//String[] str1 = str.split(" ");
             	Integer freq = minST.get(str.getName());
-            	if(freq != null) {
+            	if (freq != null) {
             		minST.put(str.getName(), freq + 1);
             	} else {
             		minST.put(str.getName(), 1);
@@ -60,33 +60,32 @@ public final class Solution {
         int input = Integer.parseInt(scan.nextLine());
         for (int a = 0; a < input; a++) {
         	String[] bstinp = scan.nextLine().split(",");
-        	//System.out.println(bstinp[0]);
         	if (bstinp[0].equals("get")) {
                 if (bstinp[1].equals("minST")) {
                 	Integer freq = minST.get(bstinp[2]);
-                	if(freq != null)
+            	    if(freq != null) {
                 	    System.out.println(minST.get(bstinp[2]));
-                    else
+            	    } else {
                         System.out.println(0);
+                    }
         	    } else if (bstinp[1].equals("maxST")) {
         	    	Integer freq = maxST.get(bstinp[2]);
-        	    	if(freq != null)
+        	    	if (freq != null) {
                 	    System.out.println(maxST.get(bstinp[2]));
-                    else
+        	    	} else {
                         System.out.println(0);
+                    }
         	    }
         	}
-        	    if (bstinp[0].equals("intersection")) {
-                	for(String s: maxST.keys()) {
-                		for(String s1: minST.keys()) {
-                			if(s.equals(s1)) {
-                				System.out.println(s);
-                			}
+        	if (bstinp[0].equals("intersection")) {
+                for (String s: maxST.keys()) {
+                    for (String s1: minST.keys()) {
+                		if (s.equals(s1)) {
+                			System.out.println(s);
                 		}
-
                 	}
-
-        	    }
+                }
+            }
         }
     }
 }
