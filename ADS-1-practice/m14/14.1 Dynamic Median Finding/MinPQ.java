@@ -17,6 +17,7 @@ public class MinPQ<Key> {
      */
     private Comparator<Key> comparator;
     /**
+     * Time complexity O(1).
      * Initializes an empty priority queue with the given initial capacity.
      * @param  initCapacity the initial capacity of this priority queue
      */
@@ -25,12 +26,14 @@ public class MinPQ<Key> {
         n = 0;
     }
     /**
+     * Time complexity O(1).
      * Initializes an empty priority queue.
      */
     public MinPQ() {
         this(1);
     }
     /**
+     * Time complexity O(1).
      * Initializes an empty priority queue with the given initial capacity,
      * using the given comparator.
      * @param  initCapacity the initial capacity of this priority queue
@@ -42,6 +45,7 @@ public class MinPQ<Key> {
         n = 0;
     }
     /**
+     * Time complexity O(1).
      * Initializes an empty priority queue using the given comparator.
      * @param  comparator1 the order in which to compare the keys
      */
@@ -49,6 +53,7 @@ public class MinPQ<Key> {
         this(1, comparator1);
     }
     /**
+     * Time complexity is O((N/2)logN).
      * Initializes a priority queue from the array of keys.
      * Takes time proportional to the number of keys,
      * using sink-based heap construction.
@@ -65,6 +70,7 @@ public class MinPQ<Key> {
         }
     }
     /**
+     * Time complexity is O(1).
      * Returns true if this priority queue is empty.
      * @return {@code true} if this priority queue is empty;
      *         {@code false} otherwise
@@ -73,6 +79,7 @@ public class MinPQ<Key> {
         return n == 0;
     }
     /**
+     * Time complexity is O(1).
      * Returns the number of keys on this priority queue.
      * @return the number of keys on this priority queue
      */
@@ -80,6 +87,7 @@ public class MinPQ<Key> {
         return n;
     }
     /**
+     * Time complexity is O(1).
      * Returns a smallest key on this priority queue.
      * @return a smallest key on this priority queue.
      */
@@ -90,6 +98,7 @@ public class MinPQ<Key> {
         return pq[1];
     }
     /**
+     * Time complexity is O(N).
      * resize method to resize the array.
      * @param      capacity  The capacity
      */
@@ -102,6 +111,7 @@ public class MinPQ<Key> {
         pq = temp;
     }
     /**
+     * Time complexity is O(logN).
      * Adds a new key to this priority queue.
      * @param  x the key to add to this priority queue
      */
@@ -113,6 +123,7 @@ public class MinPQ<Key> {
         swim(n);
     }
     /**
+     * Time complexity is O(logN).
      * Removes and returns a smallest key on this priority queue.
      * @return a smallest key on this priority queue
      */
@@ -130,8 +141,9 @@ public class MinPQ<Key> {
         return min;
     }
     /**
+     * Time complexity is O(logN).
      * swim method.
-     * @param      k    index.
+     * @param k index.
      */
     private void swim(final int k) {
         int k1 = k;
@@ -141,8 +153,9 @@ public class MinPQ<Key> {
         }
     }
     /**
+     * Time complexity is O(logN).
      * sink method.
-     * @param      k    index.
+     * @param k index.
      */
     private void sink(final int k) {
         int k1 = k;
@@ -159,6 +172,7 @@ public class MinPQ<Key> {
         }
     }
     /**
+     * Time complexity is O(1).
      * greater method.
      * @param      i     index.
      * @param      j     index.
@@ -172,6 +186,7 @@ public class MinPQ<Key> {
         }
     }
     /**
+     * Time complexity is O(1).
      * exch method to swap the elements.
      * @param      i     index.
      * @param      j     index.
@@ -182,6 +197,7 @@ public class MinPQ<Key> {
         pq[j] = swap;
     }
     /**
+     * Time complexiy is O(N).
      * Determines if minimum heap.
      * @return     True if minimum heap, False otherwise.
      */
@@ -189,6 +205,7 @@ public class MinPQ<Key> {
         return isMinHeap(1);
     }
     /**
+     * Time complexiy is O(N).
      * Determines if minimum heap.
      * @param      k     index.
      * @return     True if minimum heap, False otherwise.

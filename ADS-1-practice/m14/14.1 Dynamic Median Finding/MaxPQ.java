@@ -18,6 +18,7 @@ public class MaxPQ<Key> {
     private Comparator<Key> comparator;
 
     /**
+     * Time complexity O(1).
      * Initializes an empty priority queue with the given initial capacity.
      * @param  initCapacity the initial capacity of this priority queue
      */
@@ -26,12 +27,14 @@ public class MaxPQ<Key> {
         n = 0;
     }
     /**
+     * Time complexity O(1).
      * Initializes an empty priority queue.
      */
     public MaxPQ() {
         this(1);
     }
     /**
+     * Time complexity O(1).
      * Initializes an empty priority queue with the given initial capacity,
      * using the given comparator.
      *
@@ -54,6 +57,7 @@ public class MaxPQ<Key> {
     }
 
     /**
+     * Time complexity is O((N/2)logN).
      * Initializes a priority queue from the array of keys.
      * Takes time proportional to the number of keys,
      * using sink-based heap construction.
@@ -70,6 +74,7 @@ public class MaxPQ<Key> {
         }
     }
     /**
+     * Time complexity is O(1).
      * Returns true if this priority queue is empty.
      * @return {@code true} if this priority queue is empty;
      *         {@code false} otherwise
@@ -78,6 +83,7 @@ public class MaxPQ<Key> {
         return n == 0;
     }
     /**
+     * Time complexity is O(1).
      * Returns the number of keys on this priority queue.
      * @return the number of keys on this priority queue
      */
@@ -86,6 +92,7 @@ public class MaxPQ<Key> {
     }
 
     /**
+     * Time complexity is O(1).
      * Returns a largest key on this priority queue.
      * @return a largest key on this priority queue
      */
@@ -97,6 +104,7 @@ public class MaxPQ<Key> {
     }
     // helper function to double the size of the heap array
     /**
+     * Time complexity is O(N).
      * @param capacity value.
      */
     private void resize(final int capacity) {
@@ -107,6 +115,7 @@ public class MaxPQ<Key> {
         pq = temp;
     }
     /**
+     * Time complexity is O(logN).
      * Adds a new key to this priority queue.
      * @param  x the new key to add to this priority queue
      */
@@ -119,6 +128,7 @@ public class MaxPQ<Key> {
         swim(n);
     }
     /**
+     * Time complexity is O(logN).
      * Removes and returns a largest key on this priority queue.
      * @return a largest key on this priority queue
      */
@@ -136,6 +146,7 @@ public class MaxPQ<Key> {
         return max;
     }
     /**
+     * Time complexity is O(logN).
      * swim method.
      * @param      k     index.
      */
@@ -147,8 +158,9 @@ public class MaxPQ<Key> {
         }
     }
     /**
+     * Time complexity is O(logN).
      * sink method.
-     * @param      k     index.
+     * @param k index.
      */
     private void sink(final int k) {
         int k1 = k;
@@ -165,6 +177,7 @@ public class MaxPQ<Key> {
         }
     }
     /**
+     * Time complexity is O(1).
      * less method.
      * @param      i     index.
      * @param      j     index.
@@ -178,6 +191,7 @@ public class MaxPQ<Key> {
         }
     }
     /**
+     * Time complexiy is O(1).
      * exch method to swap the elements of array.
      * @param      i     index.
      * @param      j     index.
@@ -188,6 +202,7 @@ public class MaxPQ<Key> {
         pq[j] = swap;
     }
     /**
+     * Time complexiy is O(N).
      * Determines if maximum heap.
      * @return     True if maximum heap, False otherwise.
      */
@@ -195,9 +210,10 @@ public class MaxPQ<Key> {
         return isMaxHeap(1);
     }
     /**
+     * Time complexiy is O(N).
      * Determines if maximum heap.
-     * @param      k     index.
-     * @return     True if maximum heap, False otherwise.
+     * @param k index.
+     * @return True if maximum heap, False otherwise.
      */
     private boolean isMaxHeap(final int k) {
         if (k > n) {
