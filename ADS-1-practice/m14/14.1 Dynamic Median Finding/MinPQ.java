@@ -1,30 +1,34 @@
 import java.util.Comparator;
+import java.util.NoSuchElementException;
 /**
  * Class for minimum pq.
- * @param      <Key>  The key
+ * @param <Key> The key
  */
-public class MinPQ<Key> {
+public class MinPQ<Key> implements Iterable<Key> {
     /**
-     * pq array of type Key.
+     * tore items at indices 1 to n.
      */
     private Key[] pq;
     /**
-     * size of array pq.
+     * number of items on priority queue.
      */
     private int n;
     /**
-     * comparator of type Comparator.
+     * optional comparator.
      */
     private Comparator<Key> comparator;
+
     /**
      * Time complexity O(1).
      * Initializes an empty priority queue with the given initial capacity.
+     *
      * @param  initCapacity the initial capacity of this priority queue
      */
     public MinPQ(final int initCapacity) {
         pq = (Key[]) new Object[initCapacity + 1];
         n = 0;
     }
+
     /**
      * Time complexity O(1).
      * Initializes an empty priority queue.
@@ -32,10 +36,12 @@ public class MinPQ<Key> {
     public MinPQ() {
         this(1);
     }
+
     /**
      * Time complexity O(1).
      * Initializes an empty priority queue with the given initial capacity,
      * using the given comparator.
+     *
      * @param  initCapacity the initial capacity of this priority queue
      * @param  comparator1 the order in which to compare the keys
      */
@@ -44,19 +50,23 @@ public class MinPQ<Key> {
         pq = (Key[]) new Object[initCapacity + 1];
         n = 0;
     }
+
     /**
-     * Time complexity O(1).
      * Initializes an empty priority queue using the given comparator.
+     *
      * @param  comparator1 the order in which to compare the keys
      */
     public MinPQ(final Comparator<Key> comparator1) {
         this(1, comparator1);
     }
+
     /**
      * Time complexity is O((N/2)logN).
      * Initializes a priority queue from the array of keys.
+     * <p>
      * Takes time proportional to the number of keys,
      * using sink-based heap construction.
+     *
      * @param  keys the array of keys
      */
     public MinPQ(final Key[] keys) {
@@ -68,39 +78,49 @@ public class MinPQ<Key> {
         for (int k = n / 2; k >= 1; k--) {
             sink(k);
         }
+        assert isMinHeap();
     }
+
     /**
      * Time complexity is O(1).
      * Returns true if this priority queue is empty.
+     *
      * @return {@code true} if this priority queue is empty;
      *         {@code false} otherwise
      */
     public boolean isEmpty() {
         return n == 0;
     }
+
     /**
      * Time complexity is O(1).
      * Returns the number of keys on this priority queue.
+     *
      * @return the number of keys on this priority queue
      */
     public int size() {
         return n;
     }
+
     /**
      * Time complexity is O(1).
      * Returns a smallest key on this priority queue.
-     * @return a smallest key on this priority queue.
+     *
+     * @return a smallest key on this priority queue
+     * @throws NoSuchElementException if this priority queue is empty
      */
     public Key min() {
         if (isEmpty()) {
-            return null;
+            throw new NoSuchElementException("Priority queue underflow");
         }
         return pq[1];
     }
+
     /**
      * Time complexity is O(N).
+     * helper function to double the size of the heap array
      * resize method to resize the array.
-     * @param      capacity  The capacity
+     * @param capacity  The capacity
      */
     private void resize(final int capacity) {
         assert capacity > n;
@@ -110,26 +130,35 @@ public class MinPQ<Key> {
         }
         pq = temp;
     }
+
     /**
      * Time complexity is O(logN).
      * Adds a new key to this priority queue.
+     *
      * @param  x the key to add to this priority queue
      */
     public void insert(final Key x) {
+        // double size of array if necessary
         if (n == pq.length - 1) {
             resize(2 * pq.length);
         }
+
+        // add x, and percolate it up to maintain heap invariant
         pq[++n] = x;
         swim(n);
+        assert isMinHeap();
     }
+
     /**
      * Time complexity is O(logN).
      * Removes and returns a smallest key on this priority queue.
+     *
      * @return a smallest key on this priority queue
+     * @throws NoSuchElementException if this priority queue is empty
      */
     public Key delMin() {
         if (isEmpty()) {
-            return null;
+            throw new NoSuchElementException("Priority queue underflow");
         }
         Key min = pq[1];
         exch(1, n--);
@@ -138,6 +167,7 @@ public class MinPQ<Key> {
         if ((n > 0) && (n == (pq.length - 1) / 2 + 2)) {
             resize(pq.length / 2);
         }
+        assert isMinHeap();
         return min;
     }
     /**
@@ -146,10 +176,9 @@ public class MinPQ<Key> {
      * @param k index.
      */
     private void swim(final int k) {
-        int k1 = k;
-        while (k1 > 1 && greater(k1 / 2, k1)) {
-            exch(k1, k1 / 2);
-            k1 = k1 / 2;
+        while (k > 1 && greater(k / 2, k)) {
+            exch(k, k / 2);
+            k = k / 2;
         }
     }
     /**
@@ -158,24 +187,23 @@ public class MinPQ<Key> {
      * @param k index.
      */
     private void sink(final int k) {
-        int k1 = k;
-        while (2 * k1 <= n) {
-            int j = 2 * k1;
+        while (2 * k <= n) {
+            int j = 2 * k;
             if (j < n && greater(j, j + 1)) {
                 j++;
             }
-            if (!greater(k1, j)) {
+            if (!greater(k, j)) {
                 break;
             }
-            exch(k1, j);
-            k1 = j;
+            exch(k, j);
+            k = j;
         }
     }
     /**
      * Time complexity is O(1).
      * greater method.
-     * @param      i     index.
-     * @param      j     index.
+     * @param  i     index.
+     * @param  j     index.
      * @return     true or false.
      */
     private boolean greater(final int i, final int j) {
@@ -188,40 +216,13 @@ public class MinPQ<Key> {
     /**
      * Time complexity is O(1).
      * exch method to swap the elements.
-     * @param      i     index.
-     * @param      j     index.
+     * @param  i     index.
+     * @param  j     index.
      */
     private void exch(final int i, final int j) {
         Key swap = pq[i];
         pq[i] = pq[j];
         pq[j] = swap;
     }
-    /**
-     * Time complexiy is O(N).
-     * Determines if minimum heap.
-     * @return     True if minimum heap, False otherwise.
-     */
-    private boolean isMinHeap() {
-        return isMinHeap(1);
-    }
-    /**
-     * Time complexiy is O(N).
-     * Determines if minimum heap.
-     * @param      k     index.
-     * @return     True if minimum heap, False otherwise.
-     */
-    private boolean isMinHeap(final int k) {
-        if (k > n) {
-            return true;
-        }
-        int left = 2 * k;
-        int right = 2 * k + 1;
-        if (left  <= n && greater(k, left))  {
-            return false;
-        }
-        if (right <= n && greater(k, right)) {
-            return false;
-        }
-        return isMinHeap(left) && isMinHeap(right);
-    }
 }
+
