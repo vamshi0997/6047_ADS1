@@ -108,7 +108,7 @@ class Teams {
 	 *
 	 * @param team contains team objects.
 	 */
-	public void add(Team team) {
+	public void add(final Team team) {
         team1[size++] = team;
 	}
     /**
@@ -140,7 +140,7 @@ class SeletionSort {
      *
      * @return the team array which is sorted.
      */
-	public Team[] sort(Team[] team, int size) {
+	public Team[] sort(final Team[] team, final int size) {
 		for(int i = 0; i < size - 1; i++) {
 			int temp = i;
 			for(int j = i+1; j < size; j++) {
@@ -162,7 +162,7 @@ class SeletionSort {
 	 * @param next element which is compared to first.
 	 * @return true or false.
 	 */
-	public boolean less(Team[] team, int first, int next) {
+	public boolean less(final Team[] team, final int first, final int next) {
 		return  team[first].compareTo(team[next]) > 0;
 	}
 	/**
@@ -174,9 +174,9 @@ class SeletionSort {
 	 * @param first element in the team array that is to be replaced.
 	 * @param next element which is compared to first.
 	 */
-	public void exchange(Team[] team, int first, int next) {
+	public void exchange(fianl Team[] team, final int first, final int next) {
 		Team ct = team[next];
 		team[next] = team[first];
-		team[first] = ct; 
-	}   
+		team[first] = ct;
+	}
 }
