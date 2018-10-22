@@ -8,7 +8,7 @@ public class BST<Key extends Comparable<Key>, Value> {
     /**
      * root of node type.
      */
-    private Node root;             // root of BST
+    private Node root;
     /**
      * class Node.
      */
@@ -16,19 +16,19 @@ public class BST<Key extends Comparable<Key>, Value> {
         /**
          * key of key type.
          */
-        private Key key;           // sorted by key
+        private Key key;
         /**
          * value of value type.
          */
-        private Value val;         // associated data
+        private Value val;
         /**
          * left and right of Node type.
          */
-        private Node left, right;  // left and right subtrees
+        private Node left, right;
         /**
          * size of int type.
          */
-        private int size;          // number of nodes in subtree
+        private int size;
         /**
          * Node constructor.
          *
@@ -50,6 +50,7 @@ public class BST<Key extends Comparable<Key>, Value> {
     }
 
     /**
+     * Time complexity is O(1).
      * Returns the number of key-value pairs in this symbol table.
      * @return the number of key-value pairs in this symbol table
      */
@@ -58,6 +59,7 @@ public class BST<Key extends Comparable<Key>, Value> {
     }
 
     /**
+     * Time complexity is O(1).
      * return number of key-value pairs in BST rooted at x.
      *
      * @param x the Node.
@@ -72,6 +74,7 @@ public class BST<Key extends Comparable<Key>, Value> {
     }
 
     /**
+     * Time complexity is O(N).
      * Returns the value associated with the given key.
      *
      * @param  key the key
@@ -82,7 +85,9 @@ public class BST<Key extends Comparable<Key>, Value> {
     public Value get(final Key key) {
         return get(root, key);
     }
+
     /**
+     * Time complexity is O(N).
      * get method return the value of given key.
      *
      * @param x The Node.
@@ -108,6 +113,7 @@ public class BST<Key extends Comparable<Key>, Value> {
     }
 
     /**
+     * Time complexity is O(N).
      * Inserts the specified key-value pair into the symbol table,
      * overwriting the old
      * value with the new value
@@ -127,6 +133,7 @@ public class BST<Key extends Comparable<Key>, Value> {
         root = put(root, key, val);
     }
     /**
+     * Time complexity is O(N).
      * Inserts the specified key-value pair into the symbol table,
      * overwriting the old
      * value with the new value

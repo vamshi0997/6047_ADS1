@@ -15,6 +15,7 @@ class Book implements Comparable<Book> {
      */
     private float price;
     /**
+     * Time complexity is O(1).
      * Book class constructor.
      *
      * @param name1 name.
@@ -48,6 +49,7 @@ class Book implements Comparable<Book> {
         return this.price;
     }
     /**
+     * Time complexity is O(1).
      * compares the two differnt book names.
      *
      * @param that book object.
