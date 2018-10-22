@@ -41,7 +41,7 @@ class MergeSort {
     }
     /**
      * sort elements in array.
-     * Time complexity of sorting is O(log(N)).
+     * Time complexity of sorting is O(NlogN).
      * @param array array.
      * @param auxilary temparary array.
      * @param low low value in array.
@@ -69,7 +69,7 @@ class MergeSort {
     }
     /**
      * Rearranges the array in ascending order, using the natural order.
-     * Time complexity of this method is O(N).
+     * Time complexity of this method is O(NlogN).
      * @param cmp Comparable array.
      */
     public void sort(final Comparable[] cmp) {
