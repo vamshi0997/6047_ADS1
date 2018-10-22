@@ -32,6 +32,7 @@ class Selection {
         size1 = 0;
     }
     /**
+     * Time complexity is O(1).
      * adding student element.
      *
      * @param stud stident.
@@ -40,6 +41,7 @@ class Selection {
         nstudent[size++] = stud;
     }
     /**
+     * Time complexity is O(N^2).
      * Sort the given array.
      * @return String.
      */
@@ -54,6 +56,7 @@ class Selection {
         return s.substring(0, s.length() - 1);
     }
     /**
+     * Time complexity is O(N^2).
      * sort the given array.
      *
      * @param vacancies vacancies.
@@ -134,6 +137,7 @@ class Selection {
  */
 class SeletionSort {
     /**
+     * Time complexity is O(N^2).
      * sort is used to sort elements.
      *
      * @param select is team array ehich has team objects.
@@ -154,6 +158,7 @@ class SeletionSort {
         return select;
     }
     /**
+     * Time complexity is O(1).
      *less method is used to make use of compareTo
      *inorder to differentiate the which is less.
      *
@@ -167,6 +172,7 @@ class SeletionSort {
         return  select[first].compareTo(select[next]) > 0;
     }
     /**
+     * Time complexity is O(1).
      * exchange method is used to
      * swap element with next lowest element in array.
      *

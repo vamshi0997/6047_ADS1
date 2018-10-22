@@ -73,6 +73,7 @@ class Student implements Comparable<Student> {
 
     }
     /**
+     * Time complexity is O(1).
      * Name of Student.
      * @return name.
      */
@@ -80,6 +81,7 @@ class Student implements Comparable<Student> {
         return this.studentName;
     }
     /**
+     * Time complexity is O(1).
      * get total marks.
      * @return int.
      */
@@ -87,6 +89,7 @@ class Student implements Comparable<Student> {
         return this.total;
     }
     /**
+     * Time complexity is O(1).
      * get reservation category.
      * @return category.
      */
@@ -94,6 +97,7 @@ class Student implements Comparable<Student> {
         return this.reservationcat;
     }
     /**
+     * Time complexity is O(1).
      * comapares the required parameters in student.
      *
      * @param stud Student.
