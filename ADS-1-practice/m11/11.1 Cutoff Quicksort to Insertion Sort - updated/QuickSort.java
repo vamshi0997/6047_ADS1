@@ -20,7 +20,7 @@ class QuickSort {
     }
 
     /**
-     * time complexity is O(log N)
+     * time complexity is O(Nlog N)
      * sort the given arrays.
      *
      * @param cmp The array
@@ -42,7 +42,7 @@ class QuickSort {
     }
 
     /**
-     * time complexity is O(1)
+     * time complexity is O(NlogN)
      * sort method.
      *
      * @param cmp The array
@@ -101,7 +101,7 @@ class QuickSort {
     }
 
     /**
-     * time complexity is O(1)
+     * time complexity is O(1).
      * to compare two given elements by using comparable.
      * @param element1 first element.
      * @param element2 second element.
