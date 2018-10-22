@@ -17,6 +17,7 @@ public class Solution implements Comparable<Solution> {
      */
     private final int second;
     /**
+     * Time complexity O(1).
      * parameterized Solution constructor.
      *
      * @param first1 The first
@@ -28,6 +29,7 @@ public class Solution implements Comparable<Solution> {
         this.second = second1;
     }
     /**
+     * Time complexity is O(1).
      * CompareTo method compares first and second sum.
      *
      * @param that That object.
@@ -49,14 +51,14 @@ public class Solution implements Comparable<Solution> {
     public String toString() {
         return sum + " = " + first + "^3" + " + " + second + "^3";
     }
-
     /**
+     * Time complexity is O(2N)
      * Main method is used to handle the input.
      * @param args command line arguments.
      */
     public static void main(final String[] args) {
-        final int sixhun = 600;
-        int number = sixhun, temp = -1, count = 0;
+        final int sixhundred = 600;
+        int number = sixhundred, temp = -1, count = 0;
         Scanner scan = new Scanner(System.in);
         int nthelement = scan.nextInt();
         int mpairs = scan.nextInt();
@@ -66,7 +68,6 @@ public class Solution implements Comparable<Solution> {
             pq.insert(new Solution(i, i));
         }
 
-        // find smallest sum, print it out, and update
         while (!pq.isEmpty()) {
             Solution cubesum = pq.delMin();
             if (temp == cubesum.sum) {
