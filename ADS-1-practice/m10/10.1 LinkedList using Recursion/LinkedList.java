@@ -18,8 +18,14 @@ class LinkedList {
      * Class for node contains data and next.
      */
     class Node {
-        int data;
-        Node next;
+        /**
+         * data of integer.
+         */
+        private int data;
+        /**
+         * next of Node type.
+         */
+        private Node next;
         /**
          * Constructor for node object.
          *
@@ -53,15 +59,16 @@ class LinkedList {
      */
     private Node insert(
         final Node current, final Node temp,
-        final int position, int nPos) {
+        final int position, final int nPos) {
+        int n1 = nPos;
         if (current == null) {
             return temp;
-        } else if (nPos == position) {
+        } else if (n1 == position) {
             temp.next = current;
             return temp;
         }
-        nPos++;
-        current.next = insert(current.next, temp, position, nPos);
+        n1++;
+        current.next = insert(current.next, temp, position, n1);
         return current;
     }
     /**

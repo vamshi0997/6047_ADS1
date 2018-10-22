@@ -1,8 +1,2 @@
 Starting audit...
-[ERROR] /Users/apple/6047_ADS1/ADS-1-practice/m10/10.1 LinkedList using Recursion/LinkedList.java:21:9: Missing a Javadoc comment. [JavadocVariable]
-[ERROR] /Users/apple/6047_ADS1/ADS-1-practice/m10/10.1 LinkedList using Recursion/LinkedList.java:21:13: Variable 'data' must be private and have accessor methods. [VisibilityModifier]
-[ERROR] /Users/apple/6047_ADS1/ADS-1-practice/m10/10.1 LinkedList using Recursion/LinkedList.java:22:9: Missing a Javadoc comment. [JavadocVariable]
-[ERROR] /Users/apple/6047_ADS1/ADS-1-practice/m10/10.1 LinkedList using Recursion/LinkedList.java:22:14: Variable 'next' must be private and have accessor methods. [VisibilityModifier]
-[ERROR] /Users/apple/6047_ADS1/ADS-1-practice/m10/10.1 LinkedList using Recursion/LinkedList.java:56:29: Parameter nPos should be final. [FinalParameters]
 Audit done.
-Checkstyle ends with 5 errors.
