@@ -1,13 +1,12 @@
 import java.util.Scanner;
 import java.util.Comparator;
-import java.util.Iterator;
 import java.util.NoSuchElementException;
 
 /**
  * MinPQ class contain different methods.
  *  @param <Key> the generic type of key on this priority queue
  */
-class MinPQ<Key> implements Iterable<Key> {
+class MinPQ<Key> {
     /**
      * store items at indices 1 to n.
      */
@@ -22,6 +21,7 @@ class MinPQ<Key> implements Iterable<Key> {
     private Comparator<Key> comparator;
 
     /**
+     * Time complexity is O(1).
      * Initializes an empty priority queue with the given initial capacity.
      *
      * @param initCapacity the initial capacity of this priority queue.
@@ -32,6 +32,7 @@ class MinPQ<Key> implements Iterable<Key> {
     }
 
     /**
+     * Time complexity is O(1).
      * Initializes an empty priority queue.
      */
     MinPQ() {
@@ -39,6 +40,7 @@ class MinPQ<Key> implements Iterable<Key> {
     }
 
     /**
+     * Time complexity is O(1).
      * Initializes an empty priority queue with the given initial capacity,
      * using the given comparator.
      *
@@ -52,6 +54,7 @@ class MinPQ<Key> implements Iterable<Key> {
     }
 
     /**
+     * Time complexity is O(1).
      * Initializes an empty priority queue using the given comparator.
      *
      * @param  comparator1 the order in which to compare the keys
@@ -61,26 +64,7 @@ class MinPQ<Key> implements Iterable<Key> {
     }
 
     /**
-     * Initializes a priority queue from the array of keys.
-     * <p>
-     * Takes time proportional to the number of keys,
-     * using sink-based heap construction.
-     *
-     * @param  keys the array of keys
-     */
-    // MinPQ(final Key[] keys) {
-    //     n = keys.length;
-    //     pq = (Key[]) new Object[keys.length + 1];
-    //     for (int i = 0; i < n; i++) {
-    //         pq[i + 1] = keys[i];
-    //     }
-    //     for (int k = n / 2; k >= 1; k--) {
-    //         sink(k);
-    //     }
-    //     assert isMinHeap();
-    // }
-
-    /**
+     * Time complexity is O(1).
      * Returns true if this priority queue is empty.
      *
      * @return {@code true} if this priority queue is empty;
@@ -91,6 +75,7 @@ class MinPQ<Key> implements Iterable<Key> {
     }
 
     /**
+     * Time complexity is O(1).
      * Returns the number of keys on this priority queue.
      *
      * @return the number of keys on this priority queue
@@ -100,6 +85,7 @@ class MinPQ<Key> implements Iterable<Key> {
     }
 
     /**
+     * Time complexity is O(1).
      * Returns a smallest key on this priority queue.
      *
      * @return a smallest key on this priority queue
@@ -113,6 +99,7 @@ class MinPQ<Key> implements Iterable<Key> {
     }
 
     /**
+     * Time complexity is O(N).
      * helper function to double the size of the heap array.
      * resizing array.
      *
@@ -128,6 +115,7 @@ class MinPQ<Key> implements Iterable<Key> {
     }
 
     /**
+     * Time complexity is O(N).
      * Adds a new key to this priority queue.
      *
      * @param  x the key to add to this priority queue
@@ -146,56 +134,7 @@ class MinPQ<Key> implements Iterable<Key> {
     }
 
     /**
-     * Removes and returns a smallest key on this priority queue.
-     *
-     * @return a smallest key on this priority queue
-     * @throws NoSuchElementException if this priority queue is empty
-     */
-    public Key delMin() {
-        if (isEmpty()) {
-            throw new NoSuchElementException("Priority queue underflow");
-        }
-        Key min = pq[1];
-        exch(1, n--);
-        //sink(1);
-        pq[n + 1] = null;
-        if ((n > 0) && (n == (pq.length - 1) / (2 + 2))) {
-            resize(pq.length / 2);
-        }
-        assert isMinHeap();
-        return min;
-    }
-    // /**
-    //  * swim function is checks parent elment with child element.
-    //  *
-    //  * @param k given element position.
-    //  */
-    // private void swim(int k) {
-    //     while (k > 1 && greater(k / 2, k)) {
-    //         exch(k, k / 2);
-    //         k = k / 2;
-    //     }
-    // }
-    // /**
-    //  * sink function is used to check given element.
-    //  *
-    //  * @param k given element position.
-    //  */
-    // private void sink(int k) {
-    //     while (2 * k <= n) {
-    //         int j = 2 * k;
-    //         if (j < n && greater(j, j + 1)) {
-    //             j++;
-    //         }
-    //         if (!greater(k, j)) {
-    //             break;
-    //         }
-    //         exch(k, j);
-    //         k = j;
-    //     }
-    // }
-
-    /**
+     * Time complexity is O(1).
      * greater funtion gives which is greater.
      *
      * @param i first element.
@@ -213,18 +152,7 @@ class MinPQ<Key> implements Iterable<Key> {
     }
 
     /**
-     * exchange method.
-     *
-     * @param i first element.
-     * @param j second element.
-     */
-    private void exch(final int i, final int j) {
-        Key swap = pq[i];
-        pq[i] = pq[j];
-        pq[j] = swap;
-    }
-
-    /**
+     * Time complexity is O(logN)
      * is pq[1..N] a min heap.
      * @return true or flase base on min heap.
      */
@@ -233,6 +161,7 @@ class MinPQ<Key> implements Iterable<Key> {
     }
 
     /**
+     * Time complexity is O(logN).
      * is subtree of pq[1..n] rooted at k a min heap.
      *
      * @param k integer value.
@@ -253,65 +182,6 @@ class MinPQ<Key> implements Iterable<Key> {
         }
         return isMinHeap(left) && isMinHeap(right);
     }
-
-
-    /**
-     * Returns an iterator that iterates over the keys on this priority queue
-     * in ascending order.
-     * <p>
-     * The iterator doesn't implement {@code remove()} since it's optional.
-     *
-     * @return an iterator that iterates over the keys in ascending order
-     */
-    public Iterator<Key> iterator() {
-        return new HeapIterator();
-    }
-    /**
-     * HeapIterator class.
-     */
-    private class HeapIterator implements Iterator<Key> {
-        /**
-         * create a new pq.
-         */
-        private MinPQ<Key> copy;
-        /**
-         * add all items to copy of heap.
-         * takes linear time since already in heap order so no keys move
-         */
-        HeapIterator() {
-            if (comparator == null) {
-                copy = new MinPQ<Key>(size());
-            } else {
-                copy = new MinPQ<Key>(size(), comparator);
-            }
-            for (int i = 1; i <= n; i++) {
-                copy.insert(pq[i]);
-            }
-        }
-        /**
-         * It takes the hasnext method.
-         * @return ture are false.
-         */
-        public boolean hasNext() {
-            return !copy.isEmpty();
-        }
-        /**
-         * to remove.
-         */
-        public void remove() {
-            throw new UnsupportedOperationException();
-        }
-        /**
-         * @return each element in the MinPQ.
-         */
-        public Key next() {
-            if (!hasNext()) {
-                throw new NoSuchElementException();
-            }
-            return copy.delMin();
-        }
-    }
-
 }
 
 /**
