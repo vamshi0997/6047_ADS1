@@ -1,4 +1,2 @@
 Starting audit...
-[ERROR] /Users/apple/6047_ADS1/ADS-1-practice/m15/15.1 BinarySearchSymbolTable/BinarySearchST.java:201: Line has trailing spaces. [RegexpSingleline]
 Audit done.
-Checkstyle ends with 1 errors.

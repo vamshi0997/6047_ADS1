@@ -198,7 +198,7 @@ public class BinarySearchST<Key extends Comparable<Key>, Value> {
         return keys(min(), max());
     }
     /**
-     * Time complexity is O(logN). 
+     * Time complexity is O(logN).
      * keys method which displays the keys.
      * @param      lo    The lower
      * @param      hi    The higher
