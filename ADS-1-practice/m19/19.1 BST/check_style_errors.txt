@@ -1,4 +1,2 @@
 Starting audit...
-[ERROR] /Users/apple/6047_ADS1/ADS-1-practice/m19/19.1 BST/BST.java:0: File does not end with a newline. [NewlineAtEndOfFile]
 Audit done.
-Checkstyle ends with 1 errors.
