@@ -1,5 +1,5 @@
 /**
- * MergeSort contains methods merge, sort, 
+ * MergeSort contains methods merge, sort.
  */
 class MergeSort {
     /**
@@ -25,7 +25,7 @@ class MergeSort {
         assert isSorted(array, low, mid);
         assert isSorted(array, mid + 1, high);
         int i = low;
-        int j = mid + 1 ;
+        int j = mid + 1;
         for (int k = low; k <= high; k++) {
             if (i > mid) {
                 auxilary[k] = array[j++];
@@ -138,7 +138,7 @@ class MergeSort {
      */
     public boolean isSorted(final Comparable[] cmp,
         final int low, final int high) {
-        for (int i = low + 1; i <= high; i++) {//
+        for (int i = low + 1; i <= high; i++) {
             if (less(cmp[i], cmp[i - 1])) {
                 return false;
             }
