@@ -103,6 +103,7 @@ class Teams {
 		size = 0;
 	}
 	/**
+	 * Time complexity is O(1).
 	 * add team elements in array.
 	 *
 	 * @param team contains team objects.
@@ -111,6 +112,7 @@ class Teams {
         team1[size++] = team;
 	}
     /**
+     * Time complexity is O(N^2).
      * sort method is used to sort the team object by sending it to selection sort.
      * @return the string contains team name in order.
      */
@@ -130,6 +132,7 @@ class Teams {
  */
 class SeletionSort {
     /**
+     * Time complexity is O(N^2).
      * sort is used to sort elements.
      *
      * @param team is team array ehich has team objects.
@@ -150,6 +153,7 @@ class SeletionSort {
         return team;
 	}
 	/**
+	 * Time comlexity is O(1).
 	 *less method is used to make use of compareTo
 	 *inorder to differentiate the which is less. 
 	 * 
@@ -162,6 +166,7 @@ class SeletionSort {
 		return  team[first].compareTo(team[next]) > 0;
 	}
 	/**
+	 * Time complexity is O(1).
 	 * exchange method is used to
 	 * swap element with next lowest element in array.
 	 *
