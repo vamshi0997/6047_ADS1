@@ -126,7 +126,7 @@ public class MinPQ<Key> {
         }
     }
     /**
-     * Time complexity is O(1). 
+     * Time complexity is O(1).
      * greater method to compare the elements.
      * @param i index.
      * @param j index.
