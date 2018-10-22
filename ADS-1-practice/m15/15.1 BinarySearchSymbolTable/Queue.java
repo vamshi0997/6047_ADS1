@@ -39,6 +39,7 @@ public class Queue<Item> implements Iterable<Item> {
         n = 0;
     }
     /**
+     * Time complexity is O(1).
      * Returns true if this queue is empty.
      * @return {@code true} if this queue is empty;{@code false} otherwise
      */
@@ -46,6 +47,7 @@ public class Queue<Item> implements Iterable<Item> {
         return first == null;
     }
     /**
+     * Time complexity is O(1).
      * Returns the number of items in this queue.
      * @return the number of items in this queue
      */
@@ -53,6 +55,7 @@ public class Queue<Item> implements Iterable<Item> {
         return n;
     }
     /**
+     * Time complexity is O(1).
      * Adds the item to this queue.
      * @param  item the item to add
      */
@@ -99,6 +102,7 @@ public class Queue<Item> implements Iterable<Item> {
             return current != null;
         }
         /**
+         * Time complexity is O(N).
          * next method that returns the elements.
          *
          * @return     item.

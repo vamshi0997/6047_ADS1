@@ -25,6 +25,7 @@ public class BinarySearchST<Key extends Comparable<Key>, Value> {
         values = (Value[]) new Object[size1];
     }
     /**
+     * Time complexity is O(1).
      * Determines if empty.
      * @return     True if empty, False otherwise.
      */
@@ -32,6 +33,7 @@ public class BinarySearchST<Key extends Comparable<Key>, Value> {
         return size == 0;
     }
     /**
+     * Time complexity is O(N).
      * delete method to delete the key.
      * @param      key   The key
      */
@@ -55,6 +57,7 @@ public class BinarySearchST<Key extends Comparable<Key>, Value> {
         values[size] = null;
     }
     /**
+     * Time complexity is O(N).
      * put method which inserts the elements into queue.
      * @param      key    The key
      * @param      value  The value
@@ -81,6 +84,7 @@ public class BinarySearchST<Key extends Comparable<Key>, Value> {
         size++;
     }
     /**
+     * Time complexity O(logN).
      * contains method that checks whether the key is.
      * present or not.
      * @param      key   The key
@@ -93,9 +97,10 @@ public class BinarySearchST<Key extends Comparable<Key>, Value> {
         return get(key) != null;
     }
     /**
+     * Time complexity O(logN).
      * get method that gets the value of key.
-     * @param      key   The key
-     * @return     value of specific key.
+     * @param key The key
+     * @return value of specific key.
      */
     public Value get(final Key key) {
         if (key == null) {
@@ -111,8 +116,9 @@ public class BinarySearchST<Key extends Comparable<Key>, Value> {
         return null;
     }
     /**
+     * Time complexity is O(1).
      * max method.
-     * @return     key.
+     * @return key.
      */
     public Key max() {
         if (isEmpty()) {
@@ -121,8 +127,9 @@ public class BinarySearchST<Key extends Comparable<Key>, Value> {
         return keys[size - 1];
     }
     /**
+     * Time complexity is O(1).
      * min method.
-     * @return     key.
+     * @return key.
      */
     public Key min() {
         if (isEmpty()) {
@@ -131,6 +138,7 @@ public class BinarySearchST<Key extends Comparable<Key>, Value> {
         return keys[0];
     }
     /**
+     * Time complexity is O(logN).
      * floor method.
      * @param      key   The key
      * @return     key.
@@ -149,6 +157,7 @@ public class BinarySearchST<Key extends Comparable<Key>, Value> {
         return keys[i - 1];
     }
     /**
+     * Time complexity is O(logN).
      * rank method.
      * @param      key   The key
      * @return     rank of type int.
@@ -172,6 +181,7 @@ public class BinarySearchST<Key extends Comparable<Key>, Value> {
         return lo;
     }
     /**
+     * Time complexity is O(N).
      * deleteMin method that deletes minimum key.
      */
     public void deleteMin() {
@@ -182,12 +192,13 @@ public class BinarySearchST<Key extends Comparable<Key>, Value> {
     }
     /**
      * keys method which displays the keys.
-     * @return     keys of type Iterable.
+     * @return keys of type Iterable.
      */
     public Iterable<Key> keys() {
         return keys(min(), max());
     }
     /**
+     * Time complexity is O(logN). 
      * keys method which displays the keys.
      * @param      lo    The lower
      * @param      hi    The higher
