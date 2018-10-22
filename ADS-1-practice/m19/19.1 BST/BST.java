@@ -78,8 +78,10 @@ public class BST<Key extends Comparable<Key>, Value> {
      *
      * @return size value.
      */
-    private int size(Node x) {
-        if (x == null) return 0;
+    private int size(final Node x) {
+        if (x == null) {
+            return 0;
+        }
         else return x.size;
     }
 
@@ -92,8 +94,10 @@ public class BST<Key extends Comparable<Key>, Value> {
      *         {@code false} otherwise
      * @throws IllegalArgumentException if {@code key} is {@code null}
      */
-    public boolean contains(Key key) {
-        if (key == null) throw new IllegalArgumentException("argument to contains() is null");
+    public boolean contains(final Key key) {
+        if (key == null) {
+            throw new IllegalArgumentException("argument to contains() is null");
+        }
         return get(key) != null;
     }
 
@@ -118,7 +122,7 @@ public class BST<Key extends Comparable<Key>, Value> {
      *
      * @return  value of given Key.
      */
-    private Value get(Node x, Key key) {
+    private Value get(final Node x, final Key key) {
         if (key == null) {
             throw new IllegalArgumentException("calls get() with a null key");
         }
@@ -148,31 +152,40 @@ public class BST<Key extends Comparable<Key>, Value> {
      * @param  val the value
      * @throws IllegalArgumentException if {@code key} is {@code null}
      */
-    public void put(Key key, Value val) {
-        if (key == null) throw new IllegalArgumentException("calls put() with a null key");
+    public void put(final Key key, final Value val) {
+        if (key == null) {
+            throw new IllegalArgumentException("calls put() with a null key");
+        }
         if (val == null) {
             delete(key);
             return;
         }
         root = put(root, key, val);
-        //assert check();
     }
     /**
      * Time complexity is O(N).
      * put method Inserts the specified key-value pair into the symbol table.
      *
      * @param x The Node.
-     * @param key   The key
-     * @param      val   The value
+     * @param key The key
+     * @param val The value
      *
-     * @return     { description_of_the_return_value }
+     * @return the Node.
      */
     private Node put(Node x, Key key, Value val) {
-        if (x == null) return new Node(key, val, 1);
+        if (x == null) {
+            return new Node(key, val, 1);
+        }
         int cmp = key.compareTo(x.key);
-        if      (cmp < 0) x.left  = put(x.left,  key, val);
-        else if (cmp > 0) x.right = put(x.right, key, val);
-        else              x.val   = val;
+        if      (cmp < 0) {
+            x.left  = put(x.left,  key, val);
+        }
+        else if (cmp > 0) {
+            x.right = put(x.right, key, val);
+        }
+        else {
+            x.val   = val;
+        }
         x.size = 1 + size(x.left) + size(x.right);
         return x;
     }
