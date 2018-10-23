@@ -1,10 +1,2 @@
 Starting audit...
-[ERROR] /Users/apple/6047_ADS1/ADS-1-practice/m20/20.1 BST/BST.java:360: Line has trailing spaces. [RegexpSingleline]
-[ERROR] /Users/apple/6047_ADS1/ADS-1-practice/m20/20.1 BST/BST.java:360: Line is longer than 80 characters (found 85). [LineLength]
-[ERROR] /Users/apple/6047_ADS1/ADS-1-practice/m20/20.1 BST/BST.java:361: Line has trailing spaces. [RegexpSingleline]
-[ERROR] /Users/apple/6047_ADS1/ADS-1-practice/m20/20.1 BST/BST.java:368: Line is longer than 80 characters (found 81). [LineLength]
-[ERROR] /Users/apple/6047_ADS1/ADS-1-practice/m20/20.1 BST/BST.java:381:25: Parameter x should be final. [FinalParameters]
-[ERROR] /Users/apple/6047_ADS1/ADS-1-practice/m20/20.1 BST/BST.java:391: Line has trailing spaces. [RegexpSingleline]
-[ERROR] /Users/apple/6047_ADS1/ADS-1-practice/m20/20.1 BST/BST.java:402: Line has trailing spaces. [RegexpSingleline]
 Audit done.
-Checkstyle ends with 7 errors.

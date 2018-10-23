@@ -357,15 +357,17 @@ class BST<Key extends Comparable<Key>, Value> {
     }
 
     /**
-     * Removes the specified key and its associated value from this symbol table     
-     * (if the key is in this symbol table).    
+     * Removes the specified key and
+     * its associated value from this symbol table
+     * (if the key is in this symbol table).
      *
      * @param  key the key
      * @throws IllegalArgumentException if {@code key} is {@code null}
      */
     public void delete(final Key key) {
         if (key == null) {
-            throw new IllegalArgumentException("calls delete() with a null key");
+            throw new IllegalArgumentException(
+                "calls delete() with a null key");
         }
         root = delete(root, key);
         //assert check();
@@ -378,29 +380,30 @@ class BST<Key extends Comparable<Key>, Value> {
      *
      * @return     The Node.
      */
-    private Node delete(Node x, final Key key) {
-        if (x == null) {
+    private Node delete(final Node x, final Key key) {
+        Node temp = x;
+        if (temp == null) {
             return null;
         }
 
-        int cmp = key.compareTo(x.key);
+        int cmp = key.compareTo(temp.key);
         if      (cmp < 0) {
-            x.left  = delete(x.left,  key);
+            temp.left  = delete(temp.left,  key);
         } else if (cmp > 0) {
-            x.right = delete(x.right, key);
-        } else { 
-            if (x.right == null) {
-                return x.left;
+            temp.right = delete(temp.right, key);
+        } else {
+            if (temp.right == null) {
+                return temp.left;
             }
-            if (x.left  == null) {
-                return x.right;
+            if (temp.left  == null) {
+                return temp.right;
             }
-            Node t = x;
-            x = min(t.right);
-            x.right = deleteMin(t.right);
-            x.left = t.left;
-        } 
-        x.size = size(x.left) + size(x.right) + 1;
-        return x;
+            Node t = temp;
+            temp = min(t.right);
+            temp.right = deleteMin(t.right);
+            temp.left = t.left;
+        }
+        temp.size = size(temp.left) + size(temp.right) + 1;
+        return temp;
     }
 }
