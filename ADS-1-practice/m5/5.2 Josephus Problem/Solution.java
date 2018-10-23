@@ -30,6 +30,7 @@ class NQueue {
         private Node next;
     }
     /**
+     * Time complexity is O(1).
      * checks whether queue is empty or Not.
      * @return true are flase.
      */
@@ -37,6 +38,7 @@ class NQueue {
         return head == null;
     }
     /**
+     * Time complexity is O(1).
      * enqueue method to enter into queue.
      * @param element which is to be entered in the queue.
      */
@@ -55,6 +57,7 @@ class NQueue {
     }
 
     /**
+     * Time complexity is O(1).
      * dequeue method to delete.
      * @return the element that is deleted.
      */
@@ -70,23 +73,6 @@ class NQueue {
          head = head.next;
          return temp.data;
     }
-
-    // void display() {
-    //     if(head.next == null) {
-    //         System.out.println(head.data);
-    //         System.out.println("hi");
-    //         return;
-    //     }
-    //     Node temp = new Node();
-    //     temp = head;
-    //     while(temp.next != null) {
-    //         System.out.print(temp.data + " ");
-    //         temp = temp.next;
-    //     }
-    //     System.out.println(temp.data);
-    //     return;
-
-    // }
 }
 
 /**
@@ -115,11 +101,6 @@ public final class Solution {
             for (int i = 0; i < count; i++) {
                 n.enqueue(i);
             }
-            //n.display();
-            // for(int i = 0; i < count; i++) {
-            //     System.out.println(n.dequeue());
-            // }
-
 
             String result = "";
             while (!n.isEmpty()) {
