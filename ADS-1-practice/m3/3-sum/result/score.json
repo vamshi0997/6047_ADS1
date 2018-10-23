@@ -1,1 +1,1 @@
-{"problem_id": "ads1_3sum", "user_id": "vamshi0997", "score": "4/4", "check_style_score": "1/1"}
+{"version": "1", "message": "ERROR: Hidden Testcases server unreachable.", "problem_id": "ads1_3sum", "user_id": "vamshi0997", "score": {"sample": {"0": {"execution_time": 0.3929562568664551, "passed": true}, "1": {"execution_time": 0.4478929042816162, "passed": true}, "2": {"execution_time": 0.7813351154327393, "passed": true}, "3": {"execution_time": 1.7955331802368164, "passed": true}}}, "check_style_score": "1/1"}
