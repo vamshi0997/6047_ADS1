@@ -148,7 +148,7 @@ class BST<Key extends Comparable<Key>, Value> {
     /**
      * min method that returns the minimum node.
      * @return     Key of type Book.
-     * Time complexity for this method is O(log N).
+     * Time complexity for this method is O(N).
      */
     public Key min() {
         return min(root).key;
@@ -157,7 +157,7 @@ class BST<Key extends Comparable<Key>, Value> {
      * min method that returns the minimum node.
      * @param      x     Node.
      * @return     Node.
-     * Time complexity for this method is O(log N).
+     * Time complexity for this method is O(N).
      */
     private Node min(final Node x) {
         if (x.left == null) {
@@ -169,7 +169,7 @@ class BST<Key extends Comparable<Key>, Value> {
     /**
      * max method that returns the maximum node.
      * @return     Key of type Book.
-     * Time complexity for this method is O(log N).
+     * Time complexity for this method is O(N).
      */
     public Key max() {
         return max(root).key;
@@ -178,7 +178,7 @@ class BST<Key extends Comparable<Key>, Value> {
      * min method that returns the minimum node.
      * @param      x     Node.
      * @return     Node.
-     * Time complexity for this method is O(log N).
+     * Time complexity for this method is O(N).
      */
     private Node max(final Node x) {
         if (x.right == null) {
@@ -192,7 +192,7 @@ class BST<Key extends Comparable<Key>, Value> {
      * than given node.
      * @param      key   The key
      * @return     Key of type Book.
-     * Time complexity for this method is O(log N).
+     * Time complexity for this method is O(N).
      */
     public Key floor(final Key key) {
         Node x = floor(root, key);
@@ -208,7 +208,7 @@ class BST<Key extends Comparable<Key>, Value> {
      * @param      x     Node.
      * @param      key   The key
      * @return     Node.
-     * Time complexity for this method is O(log N).
+     * Time complexity for this method is O(N).
      */
     private Node floor(final Node x, final Key key) {
         if (x == null) {
@@ -233,7 +233,7 @@ class BST<Key extends Comparable<Key>, Value> {
      * than given node.
      * @param      key   The key
      * @return     Key of type Book.
-     * Time complexity for this method is O(log N).
+     * Time complexity for this method is O(N).
      */
     public Key ceiling(final Key key) {
         Node x = ceiling(root, key);
@@ -249,7 +249,7 @@ class BST<Key extends Comparable<Key>, Value> {
      * @param      x     Node.
      * @param      key   The key
      * @return     Node.
-     * Time complexity for this method is O(log N).
+     * Time complexity for this method is O(N).
      */
     private Node ceiling(final Node x, final Key key) {
         if (x == null) {
@@ -273,7 +273,7 @@ class BST<Key extends Comparable<Key>, Value> {
      * select method that returns the node at particular index.
      * @param      k     index.
      * @return     Key of type Book.
-     * Time complexity for this method is O(log N).
+     * Time complexity for this method is O(N).
      */
     public Key select(final int k) {
         Node x = select(root, k);
@@ -284,7 +284,7 @@ class BST<Key extends Comparable<Key>, Value> {
      * @param      x     Node.
      * @param      k     index.
      * @return     Node.
-     * Time complexity for this method is O(log N).
+     * Time complexity for this method is O(N).
      */
     private Node select(final Node x, final int k) {
         if (x == null) {
@@ -301,6 +301,7 @@ class BST<Key extends Comparable<Key>, Value> {
     }
 
     /**
+     * Time complexity is O(N).
      * Removes the smallest key and associated value from the symbol table.
      *
      * @throws NoSuchElementException if the symbol table is empty
@@ -313,6 +314,7 @@ class BST<Key extends Comparable<Key>, Value> {
         //assert check();
     }
     /**
+     * Time complexity is O(N).
      * delete Min from BST.
      *
      * @param      x     Min Node to be deleted.
@@ -329,6 +331,7 @@ class BST<Key extends Comparable<Key>, Value> {
     }
 
     /**
+     * Time complexity is O(N).
      * Removes the largest key and associated value from the symbol table.
      *
      * @throws NoSuchElementException if the symbol table is empty
@@ -341,6 +344,7 @@ class BST<Key extends Comparable<Key>, Value> {
         //assert check();
     }
     /**
+     * Time complexity is O(N).
      * delete the Maximum Node in BST.
      *
      * @param      x     TheNode to be deleted.
@@ -357,6 +361,7 @@ class BST<Key extends Comparable<Key>, Value> {
     }
 
     /**
+     * Time complexity is O(N).
      * Removes the specified key and
      * its associated value from this symbol table
      * (if the key is in this symbol table).
@@ -373,6 +378,7 @@ class BST<Key extends Comparable<Key>, Value> {
         //assert check();
     }
     /**
+     * Time complexity is O(N).
      * delete the Node whose key is given.
      *
      * @param      x     The Node.
