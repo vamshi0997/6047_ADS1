@@ -1,47 +1,11 @@
 import java.util.Scanner;
 import java.util.Arrays;
 /**
- * In solution class we have main method and other methods.
+ * Class for merge where two elements are sorted.
  */
-public final class Solution {
+class Merge {
     /**
-     * default constructor.
-     */
-    private Solution() {
-
-    }
-    /**
-     * main function where we initialize the two arrays.
-     *
-     * @param args command line arguments.
-     */
-    public static void main(final String[] args) {
-        Scanner scan = new Scanner(System.in);
-        int size1 = Integer.parseInt(scan.nextLine());
-        int size2 = Integer.parseInt(scan.nextLine());
-        String[] first = scan.nextLine().split(",");
-        String[] second = scan.nextLine().split(",");
-        int[] firstarr;
-        int[] secondarr;
-        secondarr = new int[second.length];
-
-        if (first[0].equals("")) {
-            firstarr = new int[0];
-        } else {
-            firstarr = new int[first.length];
-            for (int i = 0; i < first.length; i++) {
-            firstarr[i] = Integer.parseInt(first[i]);
-        }
-
-        }
-        for (int i = 0; i < second.length; i++) {
-            secondarr[i] = Integer.parseInt(second[i]);
-        }
-
-        mergesort(firstarr, secondarr);
-
-    }
-    /**
+     * Time complexity is O(logN).
      * sorting two arrays into a single array.
      * @param firstarr int array
      * @param secondarr int array
@@ -68,5 +32,48 @@ public final class Solution {
             Arrays.toString(result).replace(
                 "[", "").replace("]", "").replace(" ", ""));
     }
+}
 
+/**
+ * In solution class we have main method and other methods.
+ */
+public final class Solution {
+    /**
+     * default constructor.
+     */
+    private Solution() {
+
+    }
+    /**
+     * main function where we initialize the two arrays.
+     *
+     * @param args command line arguments.
+     */
+    public static void main(final String[] args) {
+        Scanner scan = new Scanner(System.in);
+        Merge m = new Merge();
+        int size1 = Integer.parseInt(scan.nextLine());
+        int size2 = Integer.parseInt(scan.nextLine());
+        String[] first = scan.nextLine().split(",");
+        String[] second = scan.nextLine().split(",");
+        int[] firstarr;
+        int[] secondarr;
+        secondarr = new int[second.length];
+
+        if (first[0].equals("")) {
+            firstarr = new int[0];
+        } else {
+            firstarr = new int[first.length];
+            for (int i = 0; i < first.length; i++) {
+            firstarr[i] = Integer.parseInt(first[i]);
+        }
+
+        }
+        for (int i = 0; i < second.length; i++) {
+            secondarr[i] = Integer.parseInt(second[i]);
+        }
+
+        m.mergesort(firstarr, secondarr);
+
+    }
 }
