@@ -1,0 +1,12 @@
+Starting audit...
+[ERROR] /Users/apple/6047_ADS1/ADS-1-practice/m21/22.1 Ransom Note/Solution.java:0: File does not end with a newline. [NewlineAtEndOfFile]
+[ERROR] /Users/apple/6047_ADS1/ADS-1-practice/m21/22.1 Ransom Note/Solution.java:6: Class Solution should be declared as final. [FinalClass]
+[ERROR] /Users/apple/6047_ADS1/ADS-1-practice/m21/22.1 Ransom Note/Solution.java:7:1: File contains tab characters (this is the first instance). [FileTabCharacter]
+[ERROR] /Users/apple/6047_ADS1/ADS-1-practice/m21/22.1 Ransom Note/Solution.java:13:5: Missing a Javadoc comment. [JavadocMethod]
+[ERROR] /Users/apple/6047_ADS1/ADS-1-practice/m21/22.1 Ransom Note/Solution.java:13:29: Parameter args should be final. [FinalParameters]
+[ERROR] /Users/apple/6047_ADS1/ADS-1-practice/m21/22.1 Ransom Note/Solution.java:19:21: Array brackets at illegal position. [ArrayTypeStyle]
+[ERROR] /Users/apple/6047_ADS1/ADS-1-practice/m21/22.1 Ransom Note/Solution.java:22:12: 'for' is not followed by whitespace. [WhitespaceAround]
+[ERROR] /Users/apple/6047_ADS1/ADS-1-practice/m21/22.1 Ransom Note/Solution.java:25:12: 'for' is not followed by whitespace. [WhitespaceAround]
+[ERROR] /Users/apple/6047_ADS1/ADS-1-practice/m21/22.1 Ransom Note/Solution.java:32:22: 'if' is not followed by whitespace. [WhitespaceAround]
+Audit done.
+Checkstyle ends with 9 errors.
