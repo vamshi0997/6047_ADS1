@@ -4,9 +4,10 @@ Starting audit...
 [ERROR] /Users/apple/6047_ADS1/ADS-1-practice/m21/22.1 Ransom Note/Solution.java:7:1: File contains tab characters (this is the first instance). [FileTabCharacter]
 [ERROR] /Users/apple/6047_ADS1/ADS-1-practice/m21/22.1 Ransom Note/Solution.java:13:5: Missing a Javadoc comment. [JavadocMethod]
 [ERROR] /Users/apple/6047_ADS1/ADS-1-practice/m21/22.1 Ransom Note/Solution.java:13:29: Parameter args should be final. [FinalParameters]
-[ERROR] /Users/apple/6047_ADS1/ADS-1-practice/m21/22.1 Ransom Note/Solution.java:19:21: Array brackets at illegal position. [ArrayTypeStyle]
-[ERROR] /Users/apple/6047_ADS1/ADS-1-practice/m21/22.1 Ransom Note/Solution.java:22:12: 'for' is not followed by whitespace. [WhitespaceAround]
-[ERROR] /Users/apple/6047_ADS1/ADS-1-practice/m21/22.1 Ransom Note/Solution.java:25:12: 'for' is not followed by whitespace. [WhitespaceAround]
-[ERROR] /Users/apple/6047_ADS1/ADS-1-practice/m21/22.1 Ransom Note/Solution.java:32:22: 'if' is not followed by whitespace. [WhitespaceAround]
+[ERROR] /Users/apple/6047_ADS1/ADS-1-practice/m21/22.1 Ransom Note/Solution.java:17:21: Array brackets at illegal position. [ArrayTypeStyle]
+[ERROR] /Users/apple/6047_ADS1/ADS-1-practice/m21/22.1 Ransom Note/Solution.java:20:12: 'for' is not followed by whitespace. [WhitespaceAround]
+[ERROR] /Users/apple/6047_ADS1/ADS-1-practice/m21/22.1 Ransom Note/Solution.java:29:12: 'for' is not followed by whitespace. [WhitespaceAround]
+[ERROR] /Users/apple/6047_ADS1/ADS-1-practice/m21/22.1 Ransom Note/Solution.java:33:13: '}' at column 13 should be on the same line as the next part of a multi-block statement (one that directly contains multiple blocks: if/else-if/else, do/while or try/catch/finally). [RightCurly]
+[ERROR] /Users/apple/6047_ADS1/ADS-1-practice/m21/22.1 Ransom Note/Solution.java:36:19: 'if' is not followed by whitespace. [WhitespaceAround]
 Audit done.
-Checkstyle ends with 9 errors.
+Checkstyle ends with 10 errors.
