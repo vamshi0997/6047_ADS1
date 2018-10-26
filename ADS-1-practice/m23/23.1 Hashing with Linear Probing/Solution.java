@@ -37,11 +37,7 @@ final class Solution {
                 for (String s : linearpst.keys()) {
                     str += (s + ":" + linearpst.get(s) + ", ");
                 }
-                try {
-                str = str.substring(0, str.length() - 2);
-                } catch (Exception e) {
-                    System.out.println("{}");
-                }
+                str = str.replaceAll(", $", "");
                 System.out.println(str + "}");
                 break;
             default:
