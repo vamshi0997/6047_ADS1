@@ -17,7 +17,8 @@ final class Solution {
      */
     public static void main(final String[] args) {
         Scanner scan = new Scanner(System.in);
-        LinearProbingHashST<String, Integer> linearpst = new LinearProbingHashST();
+        LinearProbingHashST<String, Integer> linearpst =
+        new LinearProbingHashST();
         int num = Integer.parseInt(scan.nextLine());
         for(int i = 0; i < num; i++) {
             String[] input = scan.nextLine().split(" ");
