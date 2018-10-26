@@ -10,7 +10,7 @@ public final class Solution {
     private Solution() {
     }
     /**
-     * Time complexity is O(N^2).
+     * Time complexity is O(N).
      * Main method handles the input and outputs and access other classes.
      *
      * @param      args  The arguments

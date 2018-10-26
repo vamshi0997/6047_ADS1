@@ -66,7 +66,7 @@ public class SeparateChainingHashST<Key, Value> {
     }
 
     /**
-     * Time complexity is O(N).
+     * Time complexity is O(1).
      * Returns true if this symbol table is empty.
      *
      * @return {@code true} if this symbol table is empty;
@@ -77,7 +77,7 @@ public class SeparateChainingHashST<Key, Value> {
     }
 
     /**
-     * Time complexity is O(N).
+     * Time complexity is O(logN).
      * Returns true if this symbol table contains the specified key.
      *
      * @param  key the key
@@ -94,7 +94,7 @@ public class SeparateChainingHashST<Key, Value> {
     }
 
     /**
-     * Time complexity is O(N).
+     * Time complexity is O(logN).
      * Returns the value associated with the specified key in this symbol table.
      *
      * @param  key the key
@@ -111,7 +111,7 @@ public class SeparateChainingHashST<Key, Value> {
     }
 
     /**
-     * Time complexity is O(N).
+     * Time complexity is O(logN).
      * Inserts the specified key-value pair into the symbol table,
      * overwriting the old
      * value with the new value if the symbol table
