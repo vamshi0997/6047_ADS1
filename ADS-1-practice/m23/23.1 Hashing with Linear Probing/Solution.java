@@ -20,7 +20,7 @@ final class Solution {
         LinearProbingHashST<String, Integer> linearpst =
         new LinearProbingHashST();
         int num = Integer.parseInt(scan.nextLine());
-        for(int i = 0; i < num; i++) {
+        for (int i = 0; i < num; i++) {
             String[] input = scan.nextLine().split(" ");
             switch (input[0]) {
             case "put":
@@ -37,7 +37,7 @@ final class Solution {
                 for (String s : linearpst.keys()) {
                     str += (s + ":" + linearpst.get(s) + ", ");
                 }
-                str = str.replaceAll(", $", "");
+                str = str.substring(str.length() - 1);
                 System.out.println(str + "}");
                 break;
             default:
