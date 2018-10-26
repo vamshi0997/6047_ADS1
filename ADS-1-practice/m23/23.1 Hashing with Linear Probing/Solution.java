@@ -34,7 +34,7 @@ final class Solution {
             case "display":
                 String str = "{";
                 for (String s : linearpst.keys()) {
-                    str += (s + ":" + linearpst.get(s) + " ");
+                    str += (s + ":" + linearpst.get(s) + ", ");
                 }
                 str = str.replaceAll(", $", "");
                 System.out.println(str + "}");
