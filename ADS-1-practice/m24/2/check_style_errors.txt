@@ -1,0 +1,7 @@
+Starting audit...
+[ERROR] /Users/apple/6047_ADS1/ADS-1-practice/m24/2/Student.java:54:5: Missing a Javadoc comment. [JavadocMethod]
+[ERROR] /Users/apple/6047_ADS1/ADS-1-practice/m24/2/Student.java:54:26: Parameter s should be final. [FinalParameters]
+[ERROR] /Users/apple/6047_ADS1/ADS-1-practice/m24/2/Student.java:55:11: 'if' is not followed by whitespace. [WhitespaceAround]
+[ERROR] /Users/apple/6047_ADS1/ADS-1-practice/m24/2/Student.java:58:11: 'if' is not followed by whitespace. [WhitespaceAround]
+Audit done.
+Checkstyle ends with 4 errors.
