@@ -29,16 +29,15 @@ public final class Solution {
             String[] command = scan.nextLine().split(" ");
             if (command[0].equals("BE")) {
                 for (Student s1: bs.keys()) {
-                    if(s1.getMarks() >= Double.parseDouble(command[1]) &&
-                        s1.getMarks() <= Double.parseDouble(command[2])) {
+                    if (s1.getMarks() >= Double.parseDouble(command[1])
+                        && s1.getMarks() <= Double.parseDouble(command[2])) {
                         System.out.println(s1.getName());
                     }
                 }
 
-            } 
-            else if (command[0].equals("GE")) {
+            } else if (command[0].equals("GE")) {
                 for (Student s1: bs.keys()) {
-                    if(s1.getMarks() <= Double.parseDouble(command[1])) {
+                    if (s1.getMarks() <= Double.parseDouble(command[1])) {
                         System.out.println(s1.getName());
                     }
                 }
@@ -47,7 +46,7 @@ public final class Solution {
                     if (s1.getMarks() >= Double.parseDouble(command[1])) {
                         System.out.println(s1.getName());
                     }
-                } 
+                }
             }
         }
     }
