@@ -10,6 +10,7 @@ public final class Solution {
 
     }
     /**
+     * Time complexity is O(N^N).
      * Main methods handles the input and output methods.
      *
      * @param      args  The arguments at command line.

@@ -27,6 +27,7 @@ class Student {
         this.marks = marks1;
     }
     /**
+     * Time complexity is O(1).
      * Gets the roll number of the Student.
      *
      * @return     The roll.
@@ -35,6 +36,7 @@ class Student {
         return this.rollno;
     }
     /**
+     * Time complexity is O(1).
      * Gets the name of the Student.
      *
      * @return     The name.
@@ -43,6 +45,7 @@ class Student {
         return this.name;
     }
     /**
+     * Time complexity is O(1).
      * Gets the Total marks of the Student.
      *
      * @return     The marks.
