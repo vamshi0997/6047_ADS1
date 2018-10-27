@@ -50,12 +50,18 @@ class Student implements Comparable<Student> {
     public Double getMarks() {
         return this.marks;
     }
-
-    public int compareTo(Student s) {
-        if(this.marks > s.marks) {
+    /**
+     * compareTo method comapares the two students.
+     *
+     * @param      s     { parameter_description }
+     *
+     * @return     { description_of_the_return_value }
+     */
+    public int compareTo(final Student s) {
+        if (this.marks > s.marks) {
             return 1;
         }
-        if(this.marks < s.marks) {
+        if (this.marks < s.marks) {
             return -1;
         }
         return this.name.compareTo(s.name);
