@@ -10,7 +10,7 @@ public final class Solution {
 
     }
     /**
-     * Time complexity is O(N).
+     * Time complexity is O(N * logN).
      * Main methods handles the input and output methods.
      *
      * @param      args  The arguments at command line.
@@ -38,13 +38,13 @@ public final class Solution {
 
             } else if (command[0].equals("GE")) {
                 for (Student s1: bs.keys()) {
-                    if (s1.getMarks() <= Double.parseDouble(command[1])) {
+                    if (s1.getMarks() >= Double.parseDouble(command[1])) {
                         System.out.println(s1.getName());
                     }
                 }
             } else if (command[0].equals("LE")) {
                for (Student s1: bs.keys()) {
-                    if (s1.getMarks() >= Double.parseDouble(command[1])) {
+                    if (s1.getMarks() <= Double.parseDouble(command[1])) {
                         System.out.println(s1.getName());
                     }
                 }
