@@ -21,11 +21,16 @@ public final class Solution {
         int num1 = Integer.parseInt(scan.nextLine());
         for(int j = 0; j < num1; j++) {
         	String[] ginput = scan.nextLine().split(" ");
-        	Student sd = scht.get(ginput[1]);
+        	Student sd;
+        	try {
+                sd = scht.get(ginput[1]);
         	if(ginput[2].equals("1")) {
         		System.out.println(sd.getName());
         	} else {
         		System.out.println(sd.getMarks());
+        	}
+        	} catch(Exception e) {
+        		System.out.println("Student doesn't exists...");
         	}
         }
 	}
