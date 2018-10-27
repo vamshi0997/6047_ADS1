@@ -64,7 +64,7 @@ class Student implements Comparable<Student> {
         if (this.marks < s.marks) {
             return -1;
         }
-        return this.name.compareTo(s.name);
+        return this.rollno.compareTo(s.rollno);
     }
 
 }
